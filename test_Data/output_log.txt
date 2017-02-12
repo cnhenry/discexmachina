@@ -1,54 +1,136 @@
 Initialize engine version: 5.5.0f3 (38b4efef76f0)
 GfxDevice: creating device client; threaded=1
-VR: OpenVR Error! OpenVR failed initialization with error code VRInitError_Init_HmdNotFound: "Hmd Not Found (108)"!
- 
-(Filename:  Line: 959)
-
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 980 Ti (ID=0x17c8)
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
     Vendor:   NVIDIA
-    VRAM:     6102 MB
-    Driver:   21.21.13.7653
+    VRAM:     8119 MB
+    Driver:   21.21.13.7849
 Begin MonoManager ReloadAssembly
-Platform assembly: O:\Mach G\Unity Projects\discexmachina\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading O:\Mach G\Unity Projects\discexmachina\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: O:\Mach G\Unity Projects\discexmachina\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading O:\Mach G\Unity Projects\discexmachina\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: O:\Mach G\Unity Projects\discexmachina\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading O:\Mach G\Unity Projects\discexmachina\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: O:\Mach G\Unity Projects\discexmachina\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading O:\Mach G\Unity Projects\discexmachina\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: O:\Mach G\Unity Projects\discexmachina\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading O:\Mach G\Unity Projects\discexmachina\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-Platform assembly: O:\Mach G\Unity Projects\discexmachina\test_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading O:\Mach G\Unity Projects\discexmachina\test_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-Platform assembly: O:\Mach G\Unity Projects\discexmachina\test_Data\Managed\UnityEngine.VR.dll (this message is harmless)
-Loading O:\Mach G\Unity Projects\discexmachina\test_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
-- Completed reload, in  0.639 seconds
-Platform assembly: O:\Mach G\Unity Projects\discexmachina\test_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: O:\Mach G\Unity Projects\discexmachina\test_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.VR.dll (this message is harmless)
+Loading C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
+- Completed reload, in  0.116 seconds
+Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
 <RI> Input initialized.
-desktop: 2560x1440 165Hz; virtual: 4480x1440 at 0,0
+desktop: 1920x1080 144Hz; virtual: 4480x1440 at -2560,-151
 <RI> Initialized touch support.
-VR: OpenVR Error! OpenVR failed initialization with error code VRInitError_Init_HmdNotFound: "Hmd Not Found (108)"!
+OpenVR initialized!
  
-(Filename:  Line: 959)
+(Filename:  Line: 381)
 
-VR: OpenVR Error! OpenVR failed initialization with error code VRInitError_Init_HmdNotFound: "Hmd Not Found (108)"!
+The referenced script on this Behaviour (Game Object 'Controller (left)') is missing!
  
-(Filename:  Line: 959)
+(Filename:  Line: 1754)
 
-UnloadTime: 218.594498 ms
-Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1738 -> priority: 1 
-  Thread -> id: 3b50 -> priority: 1 
-Entering lock, physics applied
+The referenced script on this Behaviour (Game Object 'Controller (right)') is missing!
+ 
+(Filename:  Line: 1754)
+
+UnloadTime: 0.467316 ms
+Connected to lighthouse:LHR-260D1D63
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Outside of lock and physics
+Setting up 3 worker threads for Enlighten.
+  Thread -> id: 42fc -> priority: 1 
+  Thread -> id: 1784 -> priority: 1 
+  Thread -> id: 2da4 -> priority: 1 
+The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+The referenced script on this Behaviour (Game Object 'Controller (left)') is missing!
+ 
+(Filename:  Line: 1754)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.653497 ms
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 608.
+Total: 0.247931 ms (FindLiveObjects: 0.016446 ms CreateObjectMapping: 0.020479 ms MarkObjects: 0.200145 ms  DeleteObjects: 0.010239 ms)
+
+The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Controller (left)') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Controller (left)') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Controller (right)') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Controller (right)') is missing!
+ 
+(Filename:  Line: 1754)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at NetworkedPlayerHelper.<OnStartLocalPlayer>m__0 (UnityEngine.Component component) [0x00000] in <filename unknown>:0 
+  at System.Linq.Enumerable+<CreateWhereIterator>c__Iterator1D`1[UnityEngine.Component].MoveNext () [0x00000] in <filename unknown>:0 
+  at System.Linq.Enumerable+<CreateCastIterator>c__Iterator0`1[UnityEngine.MonoBehaviour].MoveNext () [0x00000] in <filename unknown>:0 
+  at NetworkedPlayerHelper.OnStartLocalPlayer () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.SetLocalPlayer (Int16 localPlayerControllerId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.SetupLocalPlayerForConnection (UnityEngine.Networking.NetworkConnection conn, UnityEngine.Networking.NetworkIdentity uv, UnityEngine.Networking.PlayerController newPlayerController) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalAddPlayerForConnection (UnityEngine.Networking.NetworkConnection conn, UnityEngine.GameObject playerGameObject, Int16 playerControllerId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.AddPlayerForConnection (UnityEngine.Networking.NetworkConnection conn, UnityEngine.GameObject player, Int16 playerControllerId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkManager.OnServerAddPlayerInternal (UnityEngine.Networking.NetworkConnection conn, Int16 playerControllerId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkManager.OnServerAddPlayer (UnityEngine.Networking.NetworkConnection conn, Int16 playerControllerId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkManager.OnServerAddPlayerMessageInternal (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.InvokeHandler (Int16 msgType, UnityEngine.Networking.NetworkReader reader, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InvokeHandlerOnServer (UnityEngine.Networking.ULocalConnectionToServer conn, Int16 msgType, UnityEngine.Networking.MessageBase msg, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.ULocalConnectionToServer.Send (Int16 msgType, UnityEngine.Networking.MessageBase msg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.ClientScene.AddPlayer (UnityEngine.Networking.NetworkConnection readyConn, Int16 playerControllerId, UnityEngine.Networking.MessageBase extraMessage) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.ClientScene.AddPlayer (UnityEngine.Networking.NetworkConnection readyConn, Int16 playerControllerId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.ClientScene.AddPlayer (Int16 playerControllerId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkManager.OnClientSceneChanged (UnityEngine.Networking.NetworkConnection conn) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkManager.FinishLoadScene () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkManager.UpdateScene () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+A connection has already been set as ready. There can only be one.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.426356 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 650.
+Total: 0.310613 ms (FindLiveObjects: 0.033823 ms CreateObjectMapping: 0.013032 ms MarkObjects: 0.223418 ms  DeleteObjects: 0.040029 ms)
+
+OpenVR Shutdown
+ 
+(Filename:  Line: 815)
 

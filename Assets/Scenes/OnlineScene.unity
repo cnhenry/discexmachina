@@ -515,10 +515,20 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1095987887117916, guid: 6701e7b178743bb4fa05bee6742e7008, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114171226790676774, guid: 6701e7b178743bb4fa05bee6742e7008,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114856011470573206, guid: 6701e7b178743bb4fa05bee6742e7008, type: 2}
     - {fileID: 114180754082232532, guid: 6701e7b178743bb4fa05bee6742e7008, type: 2}
     - {fileID: 114634136039305444, guid: 6701e7b178743bb4fa05bee6742e7008, type: 2}
+    - {fileID: 114171226790676774, guid: 6701e7b178743bb4fa05bee6742e7008, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6701e7b178743bb4fa05bee6742e7008, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &686631999 stripped
