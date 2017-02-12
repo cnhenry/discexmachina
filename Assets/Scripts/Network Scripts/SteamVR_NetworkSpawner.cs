@@ -46,6 +46,6 @@ public class SteamVR_NetworkSpawner : NetworkBehaviour {
         NetworkServer.Spawn(disc);
 
         //destroy the disc after 2 seconds
-        Destroy(disc, 2.0f);
+        //Destroy(disc, 2.0f);
     }
 }
