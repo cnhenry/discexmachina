@@ -6,9 +6,6 @@ using UnityEngine.Networking;
 
 public class NetworkedPlayerHelper : NetworkBehaviour {
 
-    SteamVR_TrackedObject trackedObj;
-    public GameObject prefab;
-
     public GameObject HeadModel;
     public GameObject ControllerModel;
     public GameObject DiscModel;
@@ -63,11 +60,6 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
                 transform.FindChild("Controller (left)").position = hmd.transform.position - Vector3.up * 0.5f + hmd.transform.forward * 0.25f - hmd.transform.right * 0.25f;
                 transform.FindChild("Controller (left)").rotation = hmd.rotation;
             }
-            var device = SteamVR_Controller.Input((int)trackedObj.index);
-            if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger) == true)
-            {
-                CmdSpawnDisc();
-            }
         }
 
     }
@@ -85,19 +77,5 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
         newGameObject.transform.position = tf.position;
         newGameObject.transform.parent = tf;
         tf.gameObject.SetActive(true);
-    }
-
-    [Command]
-    void CmdSpawnDisc()
-    {
-        var disc = (GameObject)Instantiate(prefab);
-
-        //disc.GetComponent<Rigidbody>().velocity = disc.transform.forward * 6;
-
-        //spawn the disc on the clients
-        NetworkServer.Spawn(disc);
-
-        //destroy the disc after 2 seconds
-        Destroy(disc, 2.0f);
     }
 }
