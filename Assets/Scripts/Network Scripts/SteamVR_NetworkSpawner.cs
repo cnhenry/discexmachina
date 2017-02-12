@@ -8,14 +8,6 @@ public class SteamVR_NetworkSpawner : NetworkBehaviour {
     SteamVR_TrackedObject trackedObj;
     public GameObject prefab;
     public bool triggerButtonDown = false;
-    
-    private SteamVR_Controller.Device controller
-    {
-        get
-        {
-            return SteamVR_Controller.Input((int)trackedObj.index);
-        }
-    }
 
     // Use this for initialization
     void Start()
@@ -34,7 +26,7 @@ public class SteamVR_NetworkSpawner : NetworkBehaviour {
 
         var device = SteamVR_Controller.Input((int)trackedObj.index);
 
-        triggerButtonDown = controller.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger);
+        triggerButtonDown = device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger);
         if (triggerButtonDown)
         {
             //Debug.Log("Spawn");
