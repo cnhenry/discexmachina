@@ -7,7 +7,6 @@ public class SteamVR_NetworkSpawner : NetworkBehaviour {
 
     SteamVR_TrackedObject trackedObj;
     public GameObject prefab;
-    public bool triggerButtonDown = false;
 
     // Use this for initialization
     void Start()
@@ -26,8 +25,7 @@ public class SteamVR_NetworkSpawner : NetworkBehaviour {
 
         var device = SteamVR_Controller.Input((int)trackedObj.index);
 
-        triggerButtonDown = device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger);
-        if (triggerButtonDown)
+        if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
         {
             //Debug.Log("Spawn");
             CmdSpawnDisc();
