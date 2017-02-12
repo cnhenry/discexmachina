@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(SteamVR_TrackedObject))]
 public class NetworkSpawner : NetworkBehaviour {
 
+    SteamVR_TrackedObject trackedObj;
     public GameObject prefab;
 
     // Use this for initialization
@@ -21,7 +22,9 @@ public class NetworkSpawner : NetworkBehaviour {
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        var device = SteamVR_Controller.Input((int)trackedObj.index);
+
+        if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger) == true)
         {
             spawnDisc();
         }
@@ -35,7 +38,11 @@ public class NetworkSpawner : NetworkBehaviour {
 
         disc.GetComponent<Rigidbody>().velocity = disc.transform.forward * 6;
 
+        //spawn the disc on the clients
         NetworkServer.Spawn(disc);
+
+        //destroy the disc after 2 seconds
+        Destroy(disc, 2.0f);
     }
 
 }
