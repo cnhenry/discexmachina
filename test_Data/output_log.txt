@@ -21,7 +21,7 @@ Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Manag
 Loading C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
 Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.VR.dll (this message is harmless)
 Loading C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
-- Completed reload, in  0.020 seconds
+- Completed reload, in  0.115 seconds
 Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
@@ -40,28 +40,28 @@ The referenced script on this Behaviour (Game Object 'Controller (right)') is mi
  
 (Filename:  Line: 1754)
 
-UnloadTime: 0.404945 ms
+UnloadTime: 0.469798 ms
 Connected to lighthouse:LHR-260D1D63
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 3 worker threads for Enlighten.
-  Thread -> id: 404c -> priority: 1 
-  Thread -> id: 3f90 -> priority: 1 
-  Thread -> id: 4184 -> priority: 1 
+  Thread -> id: 39bc -> priority: 1 
+  Thread -> id: 2738 -> priority: 1 
+  Thread -> id: 3f40 -> priority: 1 
+The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 The referenced script on this Behaviour (Game Object 'Controller (left)') is missing!
  
 (Filename:  Line: 1754)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnloadTime: 0.675529 ms
+UnloadTime: 0.734176 ms
 
 Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 620.
-Total: 0.251655 ms (FindLiveObjects: 0.017687 ms CreateObjectMapping: 0.015204 ms MarkObjects: 0.206972 ms  DeleteObjects: 0.011170 ms)
+Total: 0.283616 ms (FindLiveObjects: 0.017997 ms CreateObjectMapping: 0.020479 ms MarkObjects: 0.232727 ms  DeleteObjects: 0.012412 ms)
 
 The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
  
@@ -125,10 +125,10 @@ A connection has already been set as ready. There can only be one.
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.419219 ms
+UnloadTime: 0.462351 ms
 
 Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 762.
-Total: 0.283927 ms (FindLiveObjects: 0.025444 ms CreateObjectMapping: 0.013343 ms MarkObjects: 0.215350 ms  DeleteObjects: 0.029478 ms)
+Total: 0.308130 ms (FindLiveObjects: 0.022962 ms CreateObjectMapping: 0.013653 ms MarkObjects: 0.227762 ms  DeleteObjects: 0.042821 ms)
 
 OpenVR Shutdown
  

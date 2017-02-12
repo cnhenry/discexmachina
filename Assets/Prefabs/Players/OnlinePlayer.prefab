@@ -30,7 +30,6 @@ GameObject:
   - component: {fileID: 114516261771617382}
   - component: {fileID: 114163418878864894}
   - component: {fileID: 114861829759965662}
-  - component: {fileID: 114180754082232532}
   m_Layer: 0
   m_Name: OnlinePlayer
   m_TagString: Untagged
@@ -48,7 +47,6 @@ GameObject:
   - component: {fileID: 4371829164060672}
   - component: {fileID: 114379752769079176}
   - component: {fileID: 114820766178340902}
-  - component: {fileID: 114531500061493274}
   m_Layer: 0
   m_Name: Controller (left)
   m_TagString: Untagged
@@ -101,7 +99,6 @@ GameObject:
   - component: {fileID: 4701921384598744}
   - component: {fileID: 114313968858262668}
   - component: {fileID: 114816207509489610}
-  - component: {fileID: 114634136039305444}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -423,19 +420,6 @@ MonoBehaviour:
   HeadModel: {fileID: 100000, guid: e2232f473baad924598a33003a066d3f, type: 3}
   ControllerModel: {fileID: 100000, guid: ffd6dd0d88babe54fbda524c138e82ce, type: 3}
   DiscModel: {fileID: 0}
---- !u!114 &114180754082232532
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095987887117916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b336a17cf54488847bfdb4b97636c8a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  triggerButtonDown: 0
 --- !u!114 &114313968858262668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -510,20 +494,6 @@ MonoBehaviour:
     i15: 8
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114531500061493274
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1151251958543982}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99adcdfa6bc8f204d9cf18dc985e651b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachPoint: {fileID: 54346651081225400, guid: 0040607ff0ed6fc4ca532dd5bb72ab32,
-    type: 2}
-  grabbableRange: 0.05
 --- !u!114 &114586017209775476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -588,20 +558,6 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.5
   m_InterpolateMovement: 0.5
---- !u!114 &114634136039305444
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1464581033535764}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99adcdfa6bc8f204d9cf18dc985e651b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachPoint: {fileID: 54346651081225400, guid: 0040607ff0ed6fc4ca532dd5bb72ab32,
-    type: 2}
-  grabbableRange: 0.05
 --- !u!114 &114748088382128846
 MonoBehaviour:
   m_ObjectHideFlags: 1
