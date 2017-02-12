@@ -8,6 +8,7 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
 
     public GameObject HeadModel;
     public GameObject ControllerModel;
+    public GameObject DiscModel;
 
     //Called when local player authority has been assigned to netowrk object
     public override void OnStartLocalPlayer() {
