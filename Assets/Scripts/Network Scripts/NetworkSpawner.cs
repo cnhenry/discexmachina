@@ -26,13 +26,13 @@ public class NetworkSpawner : NetworkBehaviour {
 
         if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger) == true)
         {
-            spawnDisc();
+            CmdSpawnDisc();
         }
 
     }
 
     [Command]
-    void spawnDisc()
+    void CmdSpawnDisc()
     {
         var disc = (GameObject)Instantiate(prefab);
 
