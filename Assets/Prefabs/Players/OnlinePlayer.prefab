@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 114516261771617382}
   - component: {fileID: 114163418878864894}
   - component: {fileID: 114861829759965662}
-  - component: {fileID: 114856011470573206}
+  - component: {fileID: 114180754082232532}
   m_Layer: 0
   m_Name: OnlinePlayer
   m_TagString: Untagged
@@ -423,6 +423,18 @@ MonoBehaviour:
   HeadModel: {fileID: 100000, guid: e2232f473baad924598a33003a066d3f, type: 3}
   ControllerModel: {fileID: 100000, guid: ffd6dd0d88babe54fbda524c138e82ce, type: 3}
   DiscModel: {fileID: 0}
+--- !u!114 &114180754082232532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095987887117916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b336a17cf54488847bfdb4b97636c8a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
 --- !u!114 &114313968858262668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -503,7 +515,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1151251958543982}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99adcdfa6bc8f204d9cf18dc985e651b, type: 3}
   m_Name: 
@@ -581,7 +593,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464581033535764}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99adcdfa6bc8f204d9cf18dc985e651b, type: 3}
   m_Name: 
@@ -722,18 +734,6 @@ MonoBehaviour:
     i15: 8
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &114856011470573206
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095987887117916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c1ed0d040fa214f821cb83e8a3fe97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
 --- !u!114 &114861829759965662
 MonoBehaviour:
   m_ObjectHideFlags: 1

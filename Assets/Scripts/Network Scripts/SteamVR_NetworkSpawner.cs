@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine;
 
-//[RequireComponent(typeof(SteamVR_TrackedObject))]
-public class NetworkSpawner : NetworkBehaviour {
+public class SteamVR_NetworkSpawner : NetworkBehaviour {
 
     SteamVR_TrackedObject trackedObj;
     public GameObject prefab;
 
     // Use this for initialization
-    void Start () {
-		
-	}
+    void Start()
+    {
+
+    }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
 
         if (!isLocalPlayer)
         {
@@ -44,5 +45,4 @@ public class NetworkSpawner : NetworkBehaviour {
         //destroy the disc after 2 seconds
         Destroy(disc, 2.0f);
     }
-
 }
