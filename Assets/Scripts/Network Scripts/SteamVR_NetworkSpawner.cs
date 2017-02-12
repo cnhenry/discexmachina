@@ -20,7 +20,7 @@ public class SteamVR_NetworkSpawner : NetworkBehaviour {
     // Use this for initialization
     void Start()
     {
-        trackedObj = GetComponent();
+        //trackedObj = GetComponent();
     }
 
     // Update is called once per frame
