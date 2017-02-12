@@ -36,7 +36,7 @@ public class NetworkSpawner : NetworkBehaviour {
     {
         var disc = (GameObject)Instantiate(prefab);
 
-        disc.GetComponent<Rigidbody>().velocity = disc.transform.forward * 6;
+        //disc.GetComponent<Rigidbody>().velocity = disc.transform.forward * 6;
 
         //spawn the disc on the clients
         NetworkServer.Spawn(disc);
