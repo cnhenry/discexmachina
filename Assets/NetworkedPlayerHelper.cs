@@ -27,6 +27,16 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
                     allComponents.Where(component => component.ToString().Contains("Steam")).Cast<MonoBehaviour>() ) {
                 currentComponent.enabled = true;
             }
+            foreach (
+                MonoBehaviour currentComponent in
+                    allComponents.Where(component => component.ToString().Contains("Spawner")).Cast<MonoBehaviour>() ) {
+                currentComponent.enabled = true;
+            }
+            foreach (
+                MonoBehaviour currentComponent in
+                    allComponents.Where(component => component.ToString().Contains("Interaction")).Cast<MonoBehaviour>() ) {
+                currentComponent.enabled = true;
+            }
         } else {
             transform.position = transform.position + Vector3.up * 1.75F;
         }
