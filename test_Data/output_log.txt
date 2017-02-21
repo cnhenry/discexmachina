@@ -1,111 +1,47 @@
 Initialize engine version: 5.5.0f3 (38b4efef76f0)
 GfxDevice: creating device client; threaded=1
+VR: OpenVR Error! OpenVR failed initialization with error code VRInitError_Init_PathRegistryNotFound: "Installation path could not be located (110)"!
+ 
+(Filename:  Line: 959)
+
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
     Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
     Vendor:   NVIDIA
     VRAM:     8119 MB
-    Driver:   21.21.13.7849
+    Driver:   21.21.13.7866
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.VR.dll (this message is harmless)
-Loading C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
-- Completed reload, in  0.020 seconds
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\test_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\VR\Documents\discexmachina\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\VR\Documents\discexmachina\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\VR\Documents\discexmachina\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\VR\Documents\discexmachina\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\VR\Documents\discexmachina\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\VR\Documents\discexmachina\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\VR\Documents\discexmachina\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\VR\Documents\discexmachina\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\VR\Documents\discexmachina\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\VR\Documents\discexmachina\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\VR\Documents\discexmachina\test_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\VR\Documents\discexmachina\test_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\VR\Documents\discexmachina\test_Data\Managed\UnityEngine.VR.dll (this message is harmless)
+Loading C:\Users\VR\Documents\discexmachina\test_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
+- Completed reload, in  0.138 seconds
+Platform assembly: C:\Users\VR\Documents\discexmachina\test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\VR\Documents\discexmachina\test_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1920x1080 144Hz; virtual: 4480x1440 at -2560,-151
 <RI> Initialized touch support.
-OpenVR initialized!
+VR: OpenVR Error! OpenVR failed initialization with error code VRInitError_Init_PathRegistryNotFound: "Installation path could not be located (110)"!
  
-(Filename:  Line: 381)
+(Filename:  Line: 959)
 
-UnloadTime: 0.461420 ms
-Connected to lighthouse:LHR-260D1D63
+VR: OpenVR Error! OpenVR failed initialization with error code VRInitError_Init_PathRegistryNotFound: "Installation path could not be located (110)"!
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+(Filename:  Line: 959)
 
+UnloadTime: 0.840611 ms
 Setting up 3 worker threads for Enlighten.
-  Thread -> id: 47b0 -> priority: 1 
-  Thread -> id: 47ac -> priority: 1 
-  Thread -> id: 47b4 -> priority: 1 
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnloadTime: 0.699422 ms
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 639.
-Total: 0.316508 ms (FindLiveObjects: 0.019549 ms CreateObjectMapping: 0.022652 ms MarkObjects: 0.262826 ms  DeleteObjects: 0.010239 ms)
-
-The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Entering lock, physics applied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.480348 ms
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 807.
-Total: 0.331713 ms (FindLiveObjects: 0.032271 ms CreateObjectMapping: 0.014273 ms MarkObjects: 0.278651 ms  DeleteObjects: 0.005895 ms)
-
-The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.275238 ms
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 687.
-Total: 0.290753 ms (FindLiveObjects: 0.019859 ms CreateObjectMapping: 0.013963 ms MarkObjects: 0.248552 ms  DeleteObjects: 0.008067 ms)
-
-The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.236140 ms
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 855.
-Total: 0.320232 ms (FindLiveObjects: 0.026375 ms CreateObjectMapping: 0.013653 ms MarkObjects: 0.271515 ms  DeleteObjects: 0.008688 ms)
-
-The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.277410 ms
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 735.
-Total: 0.308130 ms (FindLiveObjects: 0.019238 ms CreateObjectMapping: 0.013032 ms MarkObjects: 0.268411 ms  DeleteObjects: 0.007136 ms)
-
-The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.233347 ms
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 903.
-Total: 0.316819 ms (FindLiveObjects: 0.027927 ms CreateObjectMapping: 0.013963 ms MarkObjects: 0.268411 ms  DeleteObjects: 0.006206 ms)
-
-OpenVR Shutdown
- 
-(Filename:  Line: 815)
-
+  Thread -> id: 48e0 -> priority: 1 
+  Thread -> id: 48e4 -> priority: 1 
+  Thread -> id: 48e8 -> priority: 1 
