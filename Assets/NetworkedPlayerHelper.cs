@@ -8,7 +8,6 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
 
     public GameObject HeadModel;
     public GameObject ControllerModel;
-    public GameObject DiscModel;
 
     //Called when local player authority has been assigned to netowrk object
     public override void OnStartLocalPlayer() {
@@ -29,14 +28,13 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
             }
             foreach (
                 MonoBehaviour currentComponent in
-                    allComponents.Where(component => component.ToString().Contains("Spawner")).Cast<MonoBehaviour>() ) {
-                currentComponent.enabled = true;
-            }
-            foreach (
-                MonoBehaviour currentComponent in
                     allComponents.Where(component => component.ToString().Contains("Interaction")).Cast<MonoBehaviour>() ) {
                 currentComponent.enabled = true;
             }
+        }
+        else
+        {
+            transform.position = transform.position + Vector3.up * 1.75f;
         }
     }
 
@@ -48,16 +46,29 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
         } else {
             gameObject.name = gameObject.name.Replace("(Clone)", "") + "_clientPlayer";
 
-            //Create HMD and Controller objects
+            //Create HMD and Controller objects for client players
             foreach ( Transform childTransform in transform ) {
                 CreateObjectFor(childTransform);
             }
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
 
+    // Update is called once per frame
+    void Update()
+    {
+        if (isLocalPlayer && !SteamVR.active)
+        {
+            GameObject otherPlayer = GameObject.Find("OnlinePlayer_clientPlayer");
+            if (otherPlayer != null)
+            {
+                Transform hmd = transform.FindChild("Camera (head)");
+                hmd.LookAt(otherPlayer.transform.FindChild("Camera (head)"));
+                transform.FindChild("Controller (right)").position = hmd.transform.position - Vector3.up * 0.5f + hmd.transform.forward * 0.25f + hmd.transform.right * 0.25f;
+                transform.FindChild("Controller (right)").rotation = hmd.rotation;
+                transform.FindChild("Controller (left)").position = hmd.transform.position - Vector3.up * 0.5f + hmd.transform.forward * 0.25f - hmd.transform.right * 0.25f;
+                transform.FindChild("Controller (left)").rotation = hmd.rotation;
+            }
+        }
     }
 
     //Creates models for the network transforms
