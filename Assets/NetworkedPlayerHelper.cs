@@ -37,8 +37,6 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
                     allComponents.Where(component => component.ToString().Contains("Interaction")).Cast<MonoBehaviour>() ) {
                 currentComponent.enabled = true;
             }
-        } else {
-            transform.position = transform.position + Vector3.up * 1.75F;
         }
     }
 
@@ -60,18 +58,6 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if ( isLocalPlayer && !SteamVR.active ) {
-            GameObject otherPlayer = GameObject.Find("OnlinePlayer_clientPlayer");
-            if ( otherPlayer != null ) {
-                Transform hmd = transform.FindChild("Camera (head)");
-                hmd.LookAt(otherPlayer.transform.FindChild("Camera (head)"));
-                transform.FindChild("Controller (right)").position = hmd.transform.position - Vector3.up * 0.5f + hmd.transform.forward * 0.25f + hmd.transform.right * 0.25f;
-                transform.FindChild("Controller (right)").rotation = hmd.rotation;
-                transform.FindChild("Controller (left)").position = hmd.transform.position - Vector3.up * 0.5f + hmd.transform.forward * 0.25f - hmd.transform.right * 0.25f;
-                transform.FindChild("Controller (left)").rotation = hmd.rotation;
-            }
-        }
-
     }
 
     //Creates models for the network transforms
@@ -79,7 +65,7 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
         GameObject newGameObject = null;
         if ( tf.name.Contains("Controller") ) {
             newGameObject = Instantiate(ControllerModel);
-        } else if ( tf.name.Contains("head") ) {
+        } else if ( tf.name.Contains("head")) {
             newGameObject = Instantiate(HeadModel);
         }
 
