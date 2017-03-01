@@ -1,0 +1,76 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 980 Ti (ID=0x17c8)
+    Vendor:   NVIDIA
+    VRAM:     6102 MB
+    Driver:   21.21.13.7653
+Begin MonoManager ReloadAssembly
+Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.VR.dll (this message is harmless)
+Loading \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
+- Completed reload, in  0.627 seconds
+Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\System.dll (this message is harmless)
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 2560x1440 165Hz; virtual: 4480x1440 at 0,0
+<RI> Initialized touch support.
+OpenVR initialized!
+ 
+(Filename:  Line: 381)
+
+UnloadTime: 0.445696 ms
+Connected to lighthouse:LHR-C985E778
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 34f4 -> priority: 1 
+  Thread -> id: 4c4 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.814592 ms
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 493.
+Total: 0.257024 ms (FindLiveObjects: 0.024576 ms CreateObjectMapping: 0.014336 ms MarkObjects: 0.205312 ms  DeleteObjects: 0.012544 ms)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:191.168.0.20:7777}
+ClientDisconnected due to error: Timeout
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.503808 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 736.
+Total: 0.290048 ms (FindLiveObjects: 0.028160 ms CreateObjectMapping: 0.014080 ms MarkObjects: 0.241664 ms  DeleteObjects: 0.005888 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.257280 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 545.
+Total: 0.313600 ms (FindLiveObjects: 0.028928 ms CreateObjectMapping: 0.011264 ms MarkObjects: 0.263936 ms  DeleteObjects: 0.009216 ms)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:191.168.0.20:7777}
+ClientDisconnected due to error: Timeout
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.314112 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 784.
+Total: 0.382720 ms (FindLiveObjects: 0.027904 ms CreateObjectMapping: 0.012544 ms MarkObjects: 0.334592 ms  DeleteObjects: 0.007424 ms)
+
