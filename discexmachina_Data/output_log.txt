@@ -21,7 +21,7 @@ Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discex
 Loading \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
 Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.VR.dll (this message is harmless)
 Loading \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
-- Completed reload, in  0.627 seconds
+- Completed reload, in  0.689 seconds
 Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
@@ -32,36 +32,19 @@ OpenVR initialized!
  
 (Filename:  Line: 381)
 
-UnloadTime: 0.445696 ms
+UnloadTime: 0.527360 ms
 Connected to lighthouse:LHR-C985E778
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 34f4 -> priority: 1 
-  Thread -> id: 4c4 -> priority: 1 
+  Thread -> id: 251c -> priority: 1 
+  Thread -> id: 468 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.814592 ms
+UnloadTime: 0.711936 ms
 
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 493.
-Total: 0.257024 ms (FindLiveObjects: 0.024576 ms CreateObjectMapping: 0.014336 ms MarkObjects: 0.205312 ms  DeleteObjects: 0.012544 ms)
-
-Log: connection {1} has been disconnected by timeout; address {::ffff:191.168.0.20:7777}
-ClientDisconnected due to error: Timeout
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.503808 ms
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 736.
-Total: 0.290048 ms (FindLiveObjects: 0.028160 ms CreateObjectMapping: 0.014080 ms MarkObjects: 0.241664 ms  DeleteObjects: 0.005888 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.257280 ms
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 545.
-Total: 0.313600 ms (FindLiveObjects: 0.028928 ms CreateObjectMapping: 0.011264 ms MarkObjects: 0.263936 ms  DeleteObjects: 0.009216 ms)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 500.
+Total: 0.288512 ms (FindLiveObjects: 0.025088 ms CreateObjectMapping: 0.014080 ms MarkObjects: 0.239104 ms  DeleteObjects: 0.009984 ms)
 
 Log: connection {1} has been disconnected by timeout; address {::ffff:191.168.0.20:7777}
 ClientDisconnected due to error: Timeout
@@ -69,8 +52,8 @@ ClientDisconnected due to error: Timeout
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.314112 ms
+UnloadTime: 0.763136 ms
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 784.
-Total: 0.382720 ms (FindLiveObjects: 0.027904 ms CreateObjectMapping: 0.012544 ms MarkObjects: 0.334592 ms  DeleteObjects: 0.007424 ms)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 802.
+Total: 0.429824 ms (FindLiveObjects: 0.032256 ms CreateObjectMapping: 0.012288 ms MarkObjects: 0.377344 ms  DeleteObjects: 0.007680 ms)
 
