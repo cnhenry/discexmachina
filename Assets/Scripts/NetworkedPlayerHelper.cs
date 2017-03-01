@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 
 public class NetworkedPlayerHelper : NetworkBehaviour {
     public GameObject Hmd;
+    public GameObject localHmd;
     public GameObject Controller;
 
     /// <summary>
@@ -20,6 +21,7 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
 
         if ( SteamVR.active ) {
             //enable steam vr scripts for the local player
+            localHmd.SetActive(true);
             List<Component> allComponents = GetComponents<Component>().ToList();
             allComponents.AddRange(GetComponentsInChildren<Component>());
             foreach (
