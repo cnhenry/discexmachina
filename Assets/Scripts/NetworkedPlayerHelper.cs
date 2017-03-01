@@ -13,20 +13,21 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
     /// Called when local player authority has been assigned to a network object
     /// </summary>
     public override void OnStartLocalPlayer() {
-        //enable all cameras and listeners for the local player
+        //Enable all cameras and listeners for the local player
         foreach ( Camera cam in GetComponentsInChildren<Camera>() ) {
             cam.enabled = true;
         }
         GetComponentInChildren<AudioListener>().enabled = true;
 
         if ( SteamVR.active ) {
-            //enable steam vr scripts for the local player
+            //Enable steam vr scripts for the local player
+            //Enable the disc spawner for the local player
             localHmd.SetActive(true);
             List<Component> allComponents = GetComponents<Component>().ToList();
             allComponents.AddRange(GetComponentsInChildren<Component>());
             foreach (
                 MonoBehaviour currentComponent in
-                    allComponents.Where(component => component.ToString().Contains("Steam")).Cast<MonoBehaviour>() ) {
+                    allComponents.Where(component => component.ToString().Contains("Steam") || component.ToString().Contains("Spawner")).Cast<MonoBehaviour>() ) {
                 currentComponent.enabled = true;
             }
         }
