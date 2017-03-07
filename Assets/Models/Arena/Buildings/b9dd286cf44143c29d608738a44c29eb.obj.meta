@@ -1,0 +1,149 @@
+fileFormatVersion: 2
+guid: 42820fda30c17314b88a387dc71cda59
+timeCreated: 1487608449
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: BACK_PACK
+    100004: BRAZOS_UV
+    100006: CABEZA_UV
+    100008: FALDA_UV
+    100010: FRAME
+    100012: FRAME_MeshPart0
+    100014: FRAME_MeshPart1
+    100016: FUNNELS_UV
+    100018: GOLD_UV
+    100020: HOMBROS_UV
+    100022: material215
+    100024: material236
+    100026: material279
+    100028: PIERNAS_UV
+    100030: TORSO_UV
+    400000: //RootNode
+    400002: BACK_PACK
+    400004: BRAZOS_UV
+    400006: CABEZA_UV
+    400008: FALDA_UV
+    400010: FRAME
+    400012: FRAME_MeshPart0
+    400014: FRAME_MeshPart1
+    400016: FUNNELS_UV
+    400018: GOLD_UV
+    400020: HOMBROS_UV
+    400022: material215
+    400024: material236
+    400026: material279
+    400028: PIERNAS_UV
+    400030: TORSO_UV
+    2300000: BACK_PACK
+    2300002: BRAZOS_UV
+    2300004: CABEZA_UV
+    2300006: FALDA_UV
+    2300008: FRAME_MeshPart0
+    2300010: FRAME_MeshPart1
+    2300012: FUNNELS_UV
+    2300014: GOLD_UV
+    2300016: HOMBROS_UV
+    2300018: material215
+    2300020: material236
+    2300022: material279
+    2300024: PIERNAS_UV
+    2300026: TORSO_UV
+    3300000: BACK_PACK
+    3300002: BRAZOS_UV
+    3300004: CABEZA_UV
+    3300006: FALDA_UV
+    3300008: FRAME_MeshPart0
+    3300010: FRAME_MeshPart1
+    3300012: FUNNELS_UV
+    3300014: GOLD_UV
+    3300016: HOMBROS_UV
+    3300018: material215
+    3300020: material236
+    3300022: material279
+    3300024: PIERNAS_UV
+    3300026: TORSO_UV
+    4300000: BACK_PACK
+    4300002: BRAZOS_UV
+    4300004: CABEZA_UV
+    4300006: FALDA_UV
+    4300008: FRAME_MeshPart0
+    4300010: FRAME_MeshPart1
+    4300012: FUNNELS_UV
+    4300014: GOLD_UV
+    4300016: HOMBROS_UV
+    4300018: material215
+    4300020: material236
+    4300022: material279
+    4300024: PIERNAS_UV
+    4300026: TORSO_UV
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
