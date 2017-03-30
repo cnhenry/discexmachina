@@ -120,9 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e146e51885102534a97b6fcecce0dca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 1000012130473404, guid: 8651d82392f01654a8bca10ce703b4be,
+  objectToSpawn: {fileID: 1269613039641304, guid: 30eb45d2330dc5d41a4a8d547576a8aa,
     type: 2}
-  spawnTime: 1
+  spawnTime: 3
   spawnPoints:
   - {fileID: 4574344208083006}
   numberToSpawn: 50

@@ -8,6 +8,9 @@ public class Explosion : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        AudioSource snd = gameObject.GetComponent<AudioSource>();
+        snd.loop = false;
+        snd.Play();
         Explode();
 	}
 	

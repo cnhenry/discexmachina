@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/OverpassScene-Offline.unity
+- path: Assets/Scenes/trainingAIScene.unity
   isLoaded: 1
   isActive: 1
