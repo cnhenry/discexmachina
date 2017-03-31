@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
 [RequireComponent(typeof(SteamVR_TrackedObject))]
-public class ControllerInteraction : MonoBehaviour {
+public class ControllerInteraction : NetworkBehaviour {
     public Rigidbody attachPoint;
     public float grabbableRange = 0.05f;
 
@@ -15,8 +16,12 @@ public class ControllerInteraction : MonoBehaviour {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
     }
 
-    void FixedUpdate()
+    void LateUpdate()
     {
+        if (!isLocalPlayer) {
+            return;
+        }
+
         var device = SteamVR_Controller.Input((int)trackedObj.index);
         if (joint == null && device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
         {

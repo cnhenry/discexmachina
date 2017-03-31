@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4698516297913628}
   - component: {fileID: 114375402247653404}
+  - component: {fileID: 54202544690625196}
   m_Layer: 0
   m_Name: Controller (left)
   m_TagString: Untagged
@@ -207,6 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4518933163677088}
   - component: {fileID: 114716515457009310}
+  - component: {fileID: 54115211268895886}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -793,6 +795,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!54 &54115211268895886
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738553173441924}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54202544690625196
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1270963212601000}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!54 &54350736229427108
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -960,6 +992,9 @@ MonoBehaviour:
     type: 2}
   leftController: {fileID: 1270963212601000}
   rightController: {fileID: 1738553173441924}
+  leftControllerAttachPoint: {fileID: 1972164479326880}
+  rightControllerAttachPoint: {fileID: 1280393842920590}
+  grabableRange: 2
 --- !u!114 &114534424995826738
 MonoBehaviour:
   m_ObjectHideFlags: 1

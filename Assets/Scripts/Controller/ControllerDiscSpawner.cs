@@ -48,7 +48,7 @@ public class ControllerDiscSpawner: NetworkBehaviour {
 
 
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
         //Spawn new disc on trigger press
         if ( controller.GetPressDown(triggerButton) && Time.time - lastTimeReleased > recallTimeDelay) {
             Debug.Log("Trigger Pressed && attachedJoint == null && recallTime satisfied");
