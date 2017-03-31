@@ -22405,7 +22405,9 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 1749828528}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114282507346117380, guid: 74b73e0c8c85549449fdd1a6bd9ec5f1, type: 2}
+    - {fileID: 114905080685736050, guid: 74b73e0c8c85549449fdd1a6bd9ec5f1, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 74b73e0c8c85549449fdd1a6bd9ec5f1, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &679527755
@@ -28645,7 +28647,7 @@ MonoBehaviour:
     m_ReactorMaximumReceivedMessages: 1024
     m_ReactorMaximumSentMessages: 1024
     m_MaxPacketSize: 2000
-  m_Channels: 
+  m_Channels: 0500000000000000
   m_UseWebSockets: 0
   m_UseSimulator: 0
   m_SimulatedLatency: 1
@@ -40831,7 +40833,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1385992118}
-  - component: {fileID: 1385992119}
   m_Layer: 0
   m_Name: Blimp
   m_TagString: Untagged
@@ -40853,26 +40854,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1385992119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1385992117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bae82d140def27541be5fd35ad204f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delayInSeconds: 0
-  speed: 20
-  transformType: 2
-  targets:
-  - {fileID: 1460921389}
-  - {fileID: 1711802309}
-  - {fileID: 800808014}
-  loop: 1
-  distanceThreshold: 1
 --- !u!1001 &1388501058
 Prefab:
   m_ObjectHideFlags: 0
@@ -42419,7 +42400,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1460921390}
-  - component: {fileID: 1460921391}
   m_Layer: 0
   m_Name: blimp (1)
   m_TagString: Untagged
@@ -42443,23 +42423,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 120, z: 0}
---- !u!114 &1460921391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1460921389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bae82d140def27541be5fd35ad204f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delayInSeconds: 0
-  speed: 5
-  transformType: 2
-  targets: []
-  loop: 1
-  distanceThreshold: 1
 --- !u!1001 &1461318709
 Prefab:
   m_ObjectHideFlags: 0

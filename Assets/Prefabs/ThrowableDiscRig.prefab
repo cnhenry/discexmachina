@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114138609563659020}
   - component: {fileID: 114062511570877786}
   - component: {fileID: 114716232586781118}
+  - component: {fileID: 114522379971324346}
   m_Layer: 0
   m_Name: ThrowableDiscRig
   m_TagString: Untagged
@@ -234,7 +235,18 @@ MonoBehaviour:
     i14: 48
     i15: 115
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
+  m_LocalPlayerAuthority: 0
+--- !u!114 &114522379971324346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1451511601448132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2ef0ea635261d499a5a187665d3e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114716232586781118
 MonoBehaviour:
   m_ObjectHideFlags: 1

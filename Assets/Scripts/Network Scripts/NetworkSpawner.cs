@@ -34,7 +34,7 @@ public class NetworkSpawner : NetworkBehaviour {
     [Command]
     void CmdSpawnDisc()
     {
-        var disc = (GameObject)Instantiate(prefab);
+        GameObject disc = (GameObject)Instantiate(prefab, transform.position, transform.rotation);
 
         //disc.GetComponent<Rigidbody>().velocity = disc.transform.forward * 6;
 
@@ -44,5 +44,4 @@ public class NetworkSpawner : NetworkBehaviour {
         //destroy the disc after 2 seconds
         Destroy(disc, 2.0f);
     }
-
 }

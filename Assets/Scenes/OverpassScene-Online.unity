@@ -17074,29 +17074,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04de0bb24e0156248b39e5b9168013a0, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &578346718 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 04de0bb24e0156248b39e5b9168013a0, type: 3}
-  m_PrefabInternal: {fileID: 578346717}
 --- !u!4 &578346719 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 04de0bb24e0156248b39e5b9168013a0, type: 3}
   m_PrefabInternal: {fileID: 578346717}
---- !u!114 &578346720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 578346718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bae82d140def27541be5fd35ad204f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delayInSeconds: 0
-  speed: 5
-  finalPositionLocation: {fileID: 573991644}
-  transformType: 2
 --- !u!1001 &578791776
 Prefab:
   m_ObjectHideFlags: 0
@@ -23414,8 +23395,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayInSeconds: 2
   speed: 30
-  finalPositionLocation: {fileID: 1983928710}
   transformType: 2
+  targets: []
+  loop: 1
+  distanceThreshold: 1
 --- !u!1 &830743704
 GameObject:
   m_ObjectHideFlags: 0
@@ -48199,8 +48182,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayInSeconds: 2
   speed: 3
-  finalPositionLocation: {fileID: 1014858905}
   transformType: 2
+  targets: []
+  loop: 1
+  distanceThreshold: 1
 --- !u!4 &1752991570
 Transform:
   m_ObjectHideFlags: 0
@@ -51571,7 +51556,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1863829983}
-  - component: {fileID: 1863829982}
   m_Layer: 0
   m_Name: blimp (1)
   m_TagString: Untagged
@@ -51579,21 +51563,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1863829982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1863829981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bae82d140def27541be5fd35ad204f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delayInSeconds: 0
-  speed: 5
-  finalPositionLocation: {fileID: 2052324727}
-  transformType: 2
 --- !u!4 &1863829983
 Transform:
   m_ObjectHideFlags: 0

@@ -2,85 +2,10 @@ Initialize engine version: 5.5.0f3 (38b4efef76f0)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
-    Vendor:   NVIDIA
-    VRAM:     8119 MB
-    Driver:   21.21.13.7866
-Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.VR.dll (this message is harmless)
-Loading C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
-- Completed reload, in  0.146 seconds
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\System.dll (this message is harmless)
-<RI> Initializing input.
-<RI> Input initialized.
-desktop: 1920x1080 144Hz; virtual: 4480x1440 at -2560,-151
-<RI> Initialized touch support.
-OpenVR initialized!
- 
-(Filename:  Line: 381)
-
-UnloadTime: 0.464524 ms
-Connected to lighthouse:LHR-260D1D63
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Setting up 3 worker threads for Enlighten.
-  Thread -> id: 618 -> priority: 1 
-  Thread -> id: 14d4 -> priority: 1 
-  Thread -> id: 399c -> priority: 1 
-The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.951295 ms
-The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 4591.
-Total: 0.601678 ms (FindLiveObjects: 0.161668 ms CreateObjectMapping: 0.050269 ms MarkObjects: 0.377328 ms  DeleteObjects: 0.012101 ms)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Initialize engine version: 5.5.0f3 (38b4efef76f0)
-GfxDevice: creating device client; threaded=1
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
     Renderer: NVIDIA GeForce GTX 980 Ti (ID=0x17c8)
     Vendor:   NVIDIA
-    VRAM:     6102 MB
-    Driver:   21.21.13.7653
+    VRAM:     6103 MB
+    Driver:   21.21.13.7892
 Begin MonoManager ReloadAssembly
 Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.dll into Unity Child Domain
@@ -98,7 +23,7 @@ Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discex
 Loading \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
 Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.VR.dll (this message is harmless)
 Loading \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
-- Completed reload, in  0.941 seconds
+- Completed reload, in  0.758 seconds
 Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: \\KEYREAPER\Users\cyrus\Documents\GitHub\discexmachina\discexmachina_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
@@ -109,425 +34,224 @@ OpenVR initialized!
  
 (Filename:  Line: 381)
 
-UnloadTime: 0.588289 ms
+UnloadTime: 0.527616 ms
 Connected to lighthouse:LHR-C985E778
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 2558 -> priority: 1 
-  Thread -> id: 3304 -> priority: 1 
-The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
+  Thread -> id: 1e50 -> priority: 1 
+  Thread -> id: 1310 -> priority: 1 
+Network configuration mismatch detected. The number of networked scripts on the client does not match the number of networked scripts on the server. This could be caused by lazy loading of scripts on the client. This warning can be disabled by the checkbox in NetworkManager Script CRC Check.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.375816 ms
-The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
+CRC Local Dump DiscSpawner : 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 4501.
-Total: 0.759809 ms (FindLiveObjects: 0.213248 ms CreateObjectMapping: 0.074752 ms MarkObjects: 0.455424 ms  DeleteObjects: 0.015616 ms)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindTiigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- g
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-s.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
+CRC Remote Dump ControllerDiscSpawner : 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+CRC Remote Dump DiscSpawner : 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+UnloadTime: 3.125252 ms
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 4499.
+Total: 1.411586 ms (FindLiveObjects: 0.231424 ms CreateObjectMapping: 0.093952 ms MarkObjects: 0.696321 ms  DeleteObjects: 0.389120 ms)
 
-Disc for this controTrigger Pressed && attachedJlint == null && recallTime satisfied
+Left Index: 2
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Fllename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-er in play. Deleting.
+Right Index: 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Right Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Left Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Left Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Left Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Left Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Left Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Left Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Left Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Left Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Left Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Left Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Left Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trigger Pressed && attachedJoint == null && recallTime satisfied
+Left Pressed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Disc for this controller in play. Deleting.
+Log: connection {1} has been disconnected by timeout; address {::ffff:191.168.0.20:7777}
+ClientDisconnected due to error: Timeout
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.381780 ms
+UnloadTime: 1.733122 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 4570.
-Total: 0.452422 ms (FindLiveObjects: 0.098055 ms CreateObjectMapping: 0.037236 ms MarkObjects: 0.310923 ms  DeleteObjects: 0.005895 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.130886 ms
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 4596.
-Total: 1.316354 ms (FindLiveObjects: 0.381184 ms CreateObjectMapping: 0.100352 ms MarkObjects: 0.816385 ms  DeleteObjects: 0.017408 ms)
-
-OpenVR Shutdown
- 
-(Filename:  Line: 815)
-
-The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.766403 ms
-The prefab 'OnlinePlayer' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 4501.
-Total: 1.043970 ms (FindLiveObjects: 0.239360 ms CreateObjectMapping: 0.065280 ms MarkObjects: 0.724481 ms  DeleteObjects: 0.014080 ms)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Pressed && attachedJoint == null && recallTime satisfied
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Disc for this controller in play. Deleting.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.448450 ms
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 4596.
-Total: 0.939777 ms (FindLiveObjects: 0.234240 ms CreateObjectMapping: 0.057600 ms MarkObjects: 0.639489 ms  DeleteObjects: 0.007936 ms)
-
-OpenVR Shutdown
- 
-(Filename:  Line: 815)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 4615.
+Total: 1.731330 ms (FindLiveObjects: 0.229376 ms CreateObjectMapping: 0.042240 ms MarkObjects: 1.444098 ms  DeleteObjects: 0.015104 ms)
 

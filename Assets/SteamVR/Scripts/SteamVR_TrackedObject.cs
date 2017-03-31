@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using Valve.VR;
 
-public class SteamVR_TrackedObject : NetworkBehaviour {
+public class SteamVR_TrackedObject : MonoBehaviour {
 	public enum EIndex
 	{
 		None = -1,

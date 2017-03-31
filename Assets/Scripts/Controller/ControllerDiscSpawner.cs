@@ -29,22 +29,26 @@ public class ControllerDiscSpawner: NetworkBehaviour {
     }
 
     // https://docs.unity3d.com/Manual/UNetSpawning.html
-    public void Spawn() {
-        //Create new disc on controllers 
-        GameObject netDisc = (GameObject)Instantiate(discToSpawn, this.transform.position, this.transform.rotation);
-
-        //Spawn the disc network sided
-        if ( isLocalPlayer ) {
-            NetworkServer.Spawn(netDisc);
-        } else {
-            //Todo: Fix this
-            //NetworkServer.SpawnWithClientAuthority(netDisc, base.connectionToClient);
-        }
-        currentDisc = netDisc;
+    // http://answers.unity3d.com/questions/987951/unet-networkserverspawn-not-working.html
+    // Command means when the client calls this function it is forwarded to the server and lets the server handle it
+    [Command]
+    public void Cmd_Spawn(Vector3 handPosition, Quaternion handRotation) {
+        GameObject netDisc = (GameObject)Instantiate(discToSpawn, handPosition, handRotation);
+        // https://forum.unity3d.com/threads/solved-clients-list-of-game-object-prefabs-not-shown-in-the-server-how-do-i-solve-this.352420/
+        //ClientScene.RegisterPrefab(netDisc);
+        //Spawn the disc on clients
+        NetworkServer.Spawn(netDisc);
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    [Command]
+    public void Cmd_Test() {
+        GameObject netDisc = (GameObject)Instantiate(discToSpawn);
+        NetworkServer.Spawn(netDisc);
+    }
+
+
+    // Update is called once per frame
+    void Update () {
         //Spawn new disc on trigger press
         if ( controller.GetPressDown(triggerButton) && Time.time - lastTimeReleased > recallTimeDelay) {
             Debug.Log("Trigger Pressed && attachedJoint == null && recallTime satisfied");
@@ -54,8 +58,10 @@ public class ControllerDiscSpawner: NetworkBehaviour {
                 Object.DestroyImmediate(joint);
             }
 
+            Debug.Log("Attempting to spawn disc");
             //Network Spawn a disc
-            Spawn();
+            //Cmd_Spawn(this.transform.position, this.transform.rotation);
+            Cmd_Test();
 
             //Attach the disc to the attachpoint with a joint
             joint = currentDisc.AddComponent<FixedJoint>();
@@ -64,6 +70,7 @@ public class ControllerDiscSpawner: NetworkBehaviour {
 
         //While trigger button is released detach the disc and send it flying!
         if ( controller.GetPressUp(triggerButton) ) {
+            Debug.Log("Trigger Released");
             //Retrieve the rigidbody of the disc
             Rigidbody rbDisc = currentDisc.GetComponent<Rigidbody>();
 
