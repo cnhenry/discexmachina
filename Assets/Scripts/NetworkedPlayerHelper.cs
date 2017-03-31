@@ -22,7 +22,7 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
         if ( SteamVR.active ) {
             //Enable steam vr scripts for the local player
             //Enable the disc spawner for the local player
-            localHmd.SetActive(true);
+            //localHmd.SetActive(true);
             List<Component> allComponents = GetComponents<Component>().ToList();
             allComponents.AddRange(GetComponentsInChildren<Component>());
             foreach (
@@ -60,9 +60,9 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
     private void CreateObjectFor(Transform tf) {
         GameObject newGameObject = null;
         if ( tf.name.Contains("Controller") ) {
-            newGameObject = Instantiate(Controller);
-            newGameObject.transform.position = tf.position;
-            newGameObject.transform.parent = tf;
+            //newGameObject = Instantiate(Controller);
+            //newGameObject.transform.position = tf.position;
+            //newGameObject.transform.parent = tf;
         } else if ( tf.name.Contains("head") ) {
             newGameObject = Instantiate(Hmd);
             newGameObject.transform.position = tf.FindChild("Camera (eye)").position;
