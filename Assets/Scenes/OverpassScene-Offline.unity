@@ -9806,6 +9806,48 @@ Transform:
   m_Father: {fileID: 328757919}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 25.705002, y: -78.117004, z: -133.311}
+--- !u!1001 &244708266
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4781763272094856, guid: 8016be787e6a38846bca5c026fee864e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781763272094856, guid: 8016be787e6a38846bca5c026fee864e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781763272094856, guid: 8016be787e6a38846bca5c026fee864e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781763272094856, guid: 8016be787e6a38846bca5c026fee864e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781763272094856, guid: 8016be787e6a38846bca5c026fee864e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781763272094856, guid: 8016be787e6a38846bca5c026fee864e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781763272094856, guid: 8016be787e6a38846bca5c026fee864e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781763272094856, guid: 8016be787e6a38846bca5c026fee864e, type: 2}
+      propertyPath: m_RootOrder
+      value: 34
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8016be787e6a38846bca5c026fee864e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &246019742
 GameObject:
   m_ObjectHideFlags: 0
@@ -28618,6 +28660,7 @@ MonoBehaviour:
   m_OnlineScene: OverpassScene-Online
   m_SpawnPrefabs:
   - {fileID: 1451511601448132, guid: 389609990feeb974f8e6890761133073, type: 2}
+  - {fileID: 0}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
