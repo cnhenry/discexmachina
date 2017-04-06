@@ -52,27 +52,52 @@ public class DiscSpawner : NetworkBehaviour {
 
         if ( Steam_LeftController.GetPressDown(SteamVR_Controller.ButtonMask.Trigger) ) {
             Debug.Log("Left Grabbing");
-            GrabObject(leftControllerAttachPoint);
+            Cmd_Grab(true);
         }
 
         if ( Steam_LeftController.GetPressUp(SteamVR_Controller.ButtonMask.Trigger) ) {
             Debug.Log("Left Released");
-            ReleaseObject(leftControllerAttachPoint, Steam_LeftController);
+            Cmd_Release(true, Steam_LeftController.velocity, Steam_LeftController.angularVelocity);
         }
 
         if ( Steam_RightController.GetPressDown(SteamVR_Controller.ButtonMask.Trigger) ) {
             Debug.Log("Right Grabbing");
-            GrabObject(rightControllerAttachPoint);
+            Cmd_Grab(false);
         }
 
         if ( Steam_RightController.GetPressUp(SteamVR_Controller.ButtonMask.Trigger) ) {
             Debug.Log("Right Released");
-            ReleaseObject(rightControllerAttachPoint, Steam_RightController);
+            Cmd_Release(false, Steam_RightController.velocity, Steam_RightController.angularVelocity);
         }
     }
 
-    //Function to grab objects and attachThem to the given attachPoint's Rigidbody
-    void GrabObject(GameObject attachPoint) {
+    // https://docs.unity3d.com/Manual/UNetSpawning.html
+    // http://answers.unity3d.com/questions/987951/unet-networkserverspawn-not-working.html
+    [Command]
+    private void Cmd_Spawn(Vector3 handPosition, Quaternion handRotation) {
+        GameObject netDisc = Instantiate(discToSpawn, handPosition, handRotation);
+        // https://forum.unity3d.com/threads/solved-clients-list-of-game-object-prefabs-not-shown-in-the-server-how-do-i-solve-this.352420/
+        NetworkServer.Spawn(netDisc);
+    }
+
+    [Command]
+    private void Cmd_Grab(bool isLeftController) {
+        Debug.Log("Telling client to grab");
+        Rpc_ClientGrab(isLeftController);
+    }
+
+
+    [ClientRpc]
+    private void Rpc_ClientGrab(bool isLeftController) {
+        Debug.Log("Server told me to grab");
+        //Set controller based on which called
+        GameObject attachPoint;
+        if ( isLeftController ) {
+            attachPoint = leftControllerAttachPoint;
+        } else {
+            attachPoint = rightControllerAttachPoint;
+        }
+
         //Get list of interactables in the environment
         InteractablePhysicalObject[] interactables = GameObject.FindObjectsOfType(typeof(InteractablePhysicalObject)) as InteractablePhysicalObject[];
 
@@ -93,7 +118,7 @@ public class DiscSpawner : NetworkBehaviour {
         if ( closestInteractable != null ) {
             Debug.Log("Found close InteractablePhysicalObjects");
             // Flag interactable as active.
-            closestInteractable.beingInteracted = true; 
+            closestInteractable.beingInteracted = true;
 
             // Set the position of the interactable and joint to rigidbody attachpoint on controllers
             closestInteractable.gameObject.transform.position = attachPoint.transform.position + closestInteractable.grabOffsetPosition;
@@ -107,8 +132,24 @@ public class DiscSpawner : NetworkBehaviour {
         }
     }
 
-    //Function to release objects attached to the attachPoint's Rigidbody
-    void ReleaseObject(GameObject attachPoint, SteamVR_Controller.Device device) {
+    [Command]
+    private void Cmd_Release(bool isLeftController, Vector3 velocity, Vector3 angularVelocity) {
+        Rpc_ClientRelease(isLeftController, velocity, angularVelocity);
+    }
+
+    [ClientRpc]
+    private void Rpc_ClientRelease(bool isLeftController, Vector3 velocity, Vector3 angularVelocity) {
+        //Set controller based on which called
+        GameObject attachPoint;
+        SteamVR_Controller.Device device;
+        if ( isLeftController ) {
+            attachPoint = leftControllerAttachPoint;
+            device = Steam_LeftController;
+        } else {
+            attachPoint = rightControllerAttachPoint;
+            device = Steam_RightController;
+        }
+
         FixedJoint joint = attachPoint.GetComponent<FixedJoint>();
 
         if ( joint != null ) {
@@ -116,6 +157,7 @@ public class DiscSpawner : NetworkBehaviour {
             InteractablePhysicalObject releasedInteractable = joint.connectedBody.gameObject.GetComponent<InteractablePhysicalObject>();
             Debug.Log("releasedInteractable=" + releasedInteractable);
             //Destroy the joint connecting the two gameObjects 'releasing' the object
+            releasedInteractable.beingInteracted = false;
             DestroyImmediate(joint);
             joint = null;
 
@@ -124,34 +166,13 @@ public class DiscSpawner : NetworkBehaviour {
             velocityMultiplier = releasedInteractable.throwMultiplier;
             angularVelocityMultiplier = releasedInteractable.angularThrowMultiplier;
 
+            //Apply a force to the disc
             Rigidbody rb = releasedInteractable.GetComponent<Rigidbody>();
-            Rigidbody attachedParentRb = attachPoint.GetComponentInParent<Rigidbody>();
 
-            Debug.Log("attachedRb.velocity=" + attachedParentRb.velocity);
+            Debug.Log("velocity=" + velocity);
 
-            rb.velocity = device.velocity * velocityMultiplier;
-            rb.angularVelocity = device.angularVelocity * angularVelocityMultiplier;
+            rb.velocity = velocity * velocityMultiplier;
+            rb.angularVelocity = angularVelocity * angularVelocityMultiplier;
         }
     }
-
-
-    //Request Server Spawn Disc at Origin
-    [Command]
-    public void Cmd_Test() {
-        GameObject netDisc = Instantiate(discToSpawn);
-        NetworkServer.SpawnWithClientAuthority(discToSpawn, this.gameObject);
-    }
-
-    // https://docs.unity3d.com/Manual/UNetSpawning.html
-    // http://answers.unity3d.com/questions/987951/unet-networkserverspawn-not-working.html
-    // Command means when the client calls this function it is forwarded to the server and lets the server handle it
-    [Command]
-    public void Cmd_Spawn(Vector3 handPosition, Quaternion handRotation) {
-        GameObject netDisc = Instantiate(discToSpawn, handPosition, handRotation);
-        // https://forum.unity3d.com/threads/solved-clients-list-of-game-object-prefabs-not-shown-in-the-server-how-do-i-solve-this.352420/
-        //ClientScene.RegisterPrefab(netDisc);
-        //Spawn the disc on clients
-        NetworkServer.Spawn(netDisc);
-    }
-
 }

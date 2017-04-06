@@ -983,7 +983,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1973309281628796}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae62eb89a8ceae74d86d860258c83dec, type: 3}
   m_Name: 
@@ -994,7 +994,7 @@ MonoBehaviour:
   rightController: {fileID: 1738553173441924}
   leftControllerAttachPoint: {fileID: 1972164479326880}
   rightControllerAttachPoint: {fileID: 1280393842920590}
-  grabableRange: 2
+  grabableRange: 3
 --- !u!114 &114534424995826738
 MonoBehaviour:
   m_ObjectHideFlags: 1
