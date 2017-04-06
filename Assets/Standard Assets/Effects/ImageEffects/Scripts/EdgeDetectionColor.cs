@@ -26,7 +26,7 @@ namespace UnityStandardAssets.ImageEffects
 		public float sampleDist = 1.0f;
 		public float edgesOnly = 0.0f;
 		public Color edgesOnlyBgColor = Color.black;
-		public Color edgesColor = Color.red;
+		public Color edgesColor = Color.blue;
 		
 		public Shader edgeDetectShader;
 		public Material edgeDetectMaterial = null;

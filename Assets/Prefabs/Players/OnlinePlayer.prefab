@@ -72,7 +72,8 @@ GameObject:
   - component: {fileID: 124161926879984238}
   - component: {fileID: 114239007720016392}
   - component: {fileID: 114792408313338226}
-  - component: {fileID: 114818084077934352}
+  - component: {fileID: 114237876552019226}
+  - component: {fileID: 114704260312998952}
   m_Layer: 0
   m_Name: Camera (eye)
   m_TagString: MainCamera
@@ -894,6 +895,28 @@ MonoBehaviour:
   Hmd: {fileID: 121222, guid: 808b9e890d940be49b8ae0dfe063d40e, type: 2}
   localHmd: {fileID: 1353174879055528}
   Controller: {fileID: 161470, guid: 04f29682267b45f4bbf8d50f83876212, type: 2}
+--- !u!114 &114237876552019226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192554816007110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb93320b63655ac4f9a6703545d0d644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 0
+  sensitivityDepth: 3.12
+  sensitivityNormals: 0.43
+  lumThreshold: -0.55
+  edgeExp: 0.19
+  sampleDist: 1
+  edgesOnly: 0
+  edgesOnlyBgColor: {r: 0, g: 0, b: 0, a: 1}
+  edgesColor: {r: 0.47794116, g: 0.47794116, b: 1, a: 1}
+  edgeDetectShader: {fileID: 4800000, guid: 7c3afc50bb21631499a6b0fbbcec07e4, type: 3}
+  edgeDetectMaterial: {fileID: 0}
 --- !u!114 &114239007720016392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1061,6 +1084,20 @@ MonoBehaviour:
   right: {fileID: 1738553173441924}
   objects: []
   assignAllBeforeIdentified: 0
+--- !u!114 &114704260312998952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192554816007110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bca9ccf900ccc84c887d783321d27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _head: {fileID: 4750992544702858}
+  _ears: {fileID: 4682870735182264}
+  wireframe: 0
 --- !u!114 &114705137748762556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1159,20 +1196,6 @@ MonoBehaviour:
   - {x: 1.65, y: 0.01, z: -1.275}
   - {x: -1.65, y: 0.01, z: -1.275}
   - {x: -1.65, y: 0.01, z: 1.275}
---- !u!114 &114818084077934352
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1192554816007110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bca9ccf900ccc84c887d783321d27e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _head: {fileID: 4750992544702858}
-  _ears: {fileID: 4682870735182264}
-  wireframe: 0
 --- !u!114 &114874837892430882
 MonoBehaviour:
   m_ObjectHideFlags: 1

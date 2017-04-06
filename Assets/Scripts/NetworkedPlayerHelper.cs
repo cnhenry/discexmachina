@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.Networking;
+using UnityStandardAssets.ImageEffects;
 
 public class NetworkedPlayerHelper : NetworkBehaviour {
     public GameObject Hmd;
@@ -18,7 +19,9 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
             cam.enabled = true;
         }
         GetComponentInChildren<AudioListener>().enabled = true;
-
+        GetComponentInChildren<EdgeDetectionColor>().enabled = true;
+        Debug.Log("GetComponentInChildren<EdgeDetectionColor>()= " + GetComponentInChildren<EdgeDetectionColor>().ToString());
+        Debug.Log("GetComponentInChildren<EdgeDetectionColor>.enabled? " + GetComponentInChildren<EdgeDetectionColor>().enabled);
         if ( SteamVR.active ) {
             //Enable steam vr scripts for the local player
             //Enable the disc spawner for the local player
@@ -27,8 +30,13 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
             allComponents.AddRange(GetComponentsInChildren<Component>());
             foreach (
                 MonoBehaviour currentComponent in
-                    allComponents.Where(component => component.ToString().Contains("Steam") || component.ToString().Contains("Spawner")).Cast<MonoBehaviour>() ) {
+                    allComponents.Where(component => component.ToString().Contains("Steam") || component.ToString().Contains("Spawner")) ) {
                 currentComponent.enabled = true;
+            foreach (
+                EdgeDetectionColor shader in allComponents.Where(component => component.ToString().Contains("Edge")) ) {
+                    shader.enabled = true;
+                    Debug.Log("shader= " + shader.ToString());
+                }
             }
         }
     }

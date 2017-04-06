@@ -19,6 +19,7 @@ Shader "Hidden/EdgeDetect" {
 	};
 
 	sampler2D _MainTex;
+    uniform half4 _Color;
 	uniform float4 _MainTex_TexelSize;
 	half4 _MainTex_ST;
 
@@ -252,7 +253,11 @@ Shader "Hidden/EdgeDetect" {
 		edge *= CheckSame(sample1.xy, DecodeFloatRG(sample1.zw), sample2);
 		edge *= CheckSame(sample3.xy, DecodeFloatRG(sample3.zw), sample4);
 
-		return edge * lerp(tex2D(_MainTex, i.uv[0]), _BgColor, _BgFade);
+		//return edge * lerp(tex2D(_MainTex, i.uv[0]), _BgColor, _BgFade);
+        if ( edge > 0 )
+            return lerp(tex2D(_MainTex, i.uv[0].xy), _BgColor, _BgFade);
+        else
+            return _Color;
 	}
 	
 	half4 fragThin (v2f i) : SV_Target
@@ -273,7 +278,11 @@ Shader "Hidden/EdgeDetect" {
 		edge *= CheckSame(centerNormal, centerDepth, sample1);
 		edge *= CheckSame(centerNormal, centerDepth, sample2);
 			
-		return edge * lerp(original, _BgColor, _BgFade);
+		//return edge * lerp(original, _BgColor, _BgFade);
+        if ( edge > 0 )
+            return lerp(original, _BgColor, _BgFade);
+        else
+            return _Color;
 	}
 	
 	ENDCG 
