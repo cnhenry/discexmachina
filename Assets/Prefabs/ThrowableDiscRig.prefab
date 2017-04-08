@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114062511570877786}
   - component: {fileID: 114716232586781118}
   - component: {fileID: 114971338308670614}
+  - component: {fileID: 114774440378881218}
   m_Layer: 0
   m_Name: ThrowableDiscRig
   m_TagString: Untagged
@@ -178,7 +179,7 @@ MeshCollider:
   m_GameObject: {fileID: 1810512114514468}
   m_Material: {fileID: 13400000, guid: 47e3123ff8533624a82372848bbdbbf8, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 1
   m_InflateMesh: 0
@@ -255,6 +256,18 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.1
   m_InterpolateMovement: 0.1
+--- !u!114 &114774440378881218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1451511601448132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0011c1f8e0e44d14193175e28456be54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 33.34
 --- !u!114 &114971338308670614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -269,15 +282,15 @@ MonoBehaviour:
   beingInteracted: 0
   grabOffsetPosition: {x: 0, y: 0, z: 0}
   grabOffsetRotation: {x: 0, y: 0, z: 0}
-  throwMultiplier: 1
-  angularThrowMultiplier: 1
+  throwMultiplier: 2
+  angularThrowMultiplier: 3
 --- !u!135 &135203363979856868
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1451511601448132}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5d1295cd1dfa81f479d16931d88aea44, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

@@ -11,7 +11,9 @@ public class DiscSpawner : NetworkBehaviour {
     public GameObject leftController, rightController;
     public GameObject leftControllerAttachPoint, rightControllerAttachPoint;
     public float grabableRange;
+    public float resetTime;
 
+    private float elapsedTime;
     private bool controllersGood = false;
 
     private SteamVR_TrackedObject leftTrackedObj;
@@ -29,7 +31,7 @@ public class DiscSpawner : NetworkBehaviour {
 
         Debug.Log("Left=" + (int)leftTrackedObj.index + " Right=" + (int)rightTrackedObj.index);
         if ( (int)leftTrackedObj.index >= 0 && (int)rightTrackedObj.index >= 0 ) {
-            Debug.Log("Controllers Assigned");
+            //Debug.Log("Controllers Assigned");
             Steam_LeftController = SteamVR_Controller.Input((int)leftTrackedObj.index);
             Steam_RightController = SteamVR_Controller.Input((int)rightTrackedObj.index);
             controllersGood = true;
@@ -41,32 +43,34 @@ public class DiscSpawner : NetworkBehaviour {
         if ( !isLocalPlayer || !controllersGood ) { return; }
 
         if ( Steam_LeftController.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad) ) {
-            Debug.Log("Left Spawning");
-            Cmd_Spawn(leftController.transform.position, leftController.transform.rotation);
+            //Debug.Log("Left Spawning");
+            //Cmd_Spawn(leftController.transform.position, leftController.transform.rotation);
         }
 
         if ( Steam_RightController.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad) ) {
-            Debug.Log("Right Spawning");
-            Cmd_Spawn(rightController.transform.position, rightController.transform.rotation);
+            //Debug.Log("Right Spawning");
+            //Cmd_Spawn(rightController.transform.position, rightController.transform.rotation);
         }
 
         if ( Steam_LeftController.GetPressDown(SteamVR_Controller.ButtonMask.Trigger) ) {
-            Debug.Log("Left Grabbing");
+            //Debug.Log("Left Grabbing");
+            Cmd_Spawn(leftController.transform.position, leftController.transform.rotation);
             Cmd_Grab(true);
         }
 
         if ( Steam_LeftController.GetPressUp(SteamVR_Controller.ButtonMask.Trigger) ) {
-            Debug.Log("Left Released");
+            //Debug.Log("Left Released");
             Cmd_Release(true, Steam_LeftController.velocity, Steam_LeftController.angularVelocity);
         }
 
         if ( Steam_RightController.GetPressDown(SteamVR_Controller.ButtonMask.Trigger) ) {
-            Debug.Log("Right Grabbing");
+            //Debug.Log("Right Grabbing");
+            Cmd_Spawn(rightController.transform.position, rightController.transform.rotation);
             Cmd_Grab(false);
         }
 
         if ( Steam_RightController.GetPressUp(SteamVR_Controller.ButtonMask.Trigger) ) {
-            Debug.Log("Right Released");
+            //Debug.Log("Right Released");
             Cmd_Release(false, Steam_RightController.velocity, Steam_RightController.angularVelocity);
         }
     }
@@ -77,7 +81,13 @@ public class DiscSpawner : NetworkBehaviour {
     private void Cmd_Spawn(Vector3 handPosition, Quaternion handRotation) {
         GameObject netDisc = Instantiate(discToSpawn, handPosition, handRotation);
         // https://forum.unity3d.com/threads/solved-clients-list-of-game-object-prefabs-not-shown-in-the-server-how-do-i-solve-this.352420/
+
+        //Notify the disc who was the thrower
+        DiscDamageScript dmgScript = netDisc.GetComponent<DiscDamageScript>();
+        dmgScript.thrower = gameObject.GetComponent<NetworkIdentity>().netId;
+
         NetworkServer.Spawn(netDisc);
+        Destroy(netDisc, resetTime);
     }
 
     [Command]
@@ -85,7 +95,6 @@ public class DiscSpawner : NetworkBehaviour {
         Debug.Log("Telling client to grab");
         Rpc_ClientGrab(isLeftController);
     }
-
 
     [ClientRpc]
     private void Rpc_ClientGrab(bool isLeftController) {
@@ -153,12 +162,18 @@ public class DiscSpawner : NetworkBehaviour {
         FixedJoint joint = attachPoint.GetComponent<FixedJoint>();
 
         if ( joint != null ) {
+            if ( joint.connectedBody == null ) {
+                DestroyImmediate(joint);
+                return;
+            }
             //Retrieve the interactable from the object
-            InteractablePhysicalObject releasedInteractable = joint.connectedBody.gameObject.GetComponent<InteractablePhysicalObject>();
-            Debug.Log("releasedInteractable=" + releasedInteractable);
+            GameObject releasedGo = joint.connectedBody.gameObject;
+            InteractablePhysicalObject releasedInteractable = releasedGo.GetComponent<InteractablePhysicalObject>();
+            //Debug.Log("releasedInteractable=" + releasedInteractable);
             //Destroy the joint connecting the two gameObjects 'releasing' the object
             releasedInteractable.beingInteracted = false;
             DestroyImmediate(joint);
+
             joint = null;
 
             //Apply physics to the interactable as if it were carrying momentum if there were any from the attachpoint
@@ -169,7 +184,7 @@ public class DiscSpawner : NetworkBehaviour {
             //Apply a force to the disc
             Rigidbody rb = releasedInteractable.GetComponent<Rigidbody>();
 
-            Debug.Log("velocity=" + velocity);
+            //Debug.Log("velocity=" + velocity);
 
             rb.velocity = velocity * velocityMultiplier;
             rb.angularVelocity = angularVelocity * angularVelocityMultiplier;

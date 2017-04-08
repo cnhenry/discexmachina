@@ -28,15 +28,15 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
             //localHmd.SetActive(true);
             List<Component> allComponents = GetComponents<Component>().ToList();
             allComponents.AddRange(GetComponentsInChildren<Component>());
-            foreach (
-                MonoBehaviour currentComponent in
-                    allComponents.Where(component => component.ToString().Contains("Steam") || component.ToString().Contains("Spawner")) ) {
+            foreach ( MonoBehaviour currentComponent in allComponents.Where(component => component.ToString().Contains("Steam")) ) {
                 currentComponent.enabled = true;
-            foreach (
-                EdgeDetectionColor shader in allComponents.Where(component => component.ToString().Contains("Edge")) ) {
-                    shader.enabled = true;
-                    Debug.Log("shader= " + shader.ToString());
-                }
+            }
+            foreach ( EdgeDetectionColor shader in allComponents.Where(component => component.ToString().Contains("Edge")) ) {
+                shader.enabled = true;
+                Debug.Log("shader= " + shader.ToString());
+            }
+            foreach ( NetworkBehaviour currentComponent in allComponents.Where(component => component.ToString().Contains("Spawner") || component.ToString().Contains("Health")) ) {
+                currentComponent.enabled = true;
             }
         }
     }

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114218064118800394}
   m_Layer: 0
   m_Name: OfflinePlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +160,6 @@ GameObject:
   - component: {fileID: 114749606764670308}
   - component: {fileID: 114333316721377444}
   - component: {fileID: 114942187179186334}
-  - component: {fileID: 114718505342662512}
   m_Layer: 0
   m_Name: Camera (eye)
   m_TagString: MainCamera
@@ -901,7 +900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a86c1078ce4314b9c4224560e031b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vrcam: {fileID: 114718505342662512}
+  vrcam: {fileID: 0}
 --- !u!114 &114218064118800394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1049,20 +1048,6 @@ MonoBehaviour:
   verbose: 0
   createComponents: 1
   updateDynamically: 1
---- !u!114 &114718505342662512
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1514045825635260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bca9ccf900ccc84c887d783321d27e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _head: {fileID: 4928841515446708}
-  _ears: {fileID: 4442417594418456}
-  wireframe: 0
 --- !u!114 &114744908947577068
 MonoBehaviour:
   m_ObjectHideFlags: 1

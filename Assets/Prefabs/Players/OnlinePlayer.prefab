@@ -193,9 +193,10 @@ GameObject:
   - component: {fileID: 33142014585042554}
   - component: {fileID: 23170834648566390}
   - component: {fileID: 114874837892430882}
+  - component: {fileID: 136070506952683280}
   m_Layer: 0
   m_Name: character_body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,9 +270,10 @@ GameObject:
   - component: {fileID: 114298771784663674}
   - component: {fileID: 114135749657167918}
   - component: {fileID: 114523772234209126}
+  - component: {fileID: 114856309144559536}
   m_Layer: 0
   m_Name: OnlinePlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1018,6 +1020,7 @@ MonoBehaviour:
   leftControllerAttachPoint: {fileID: 1972164479326880}
   rightControllerAttachPoint: {fileID: 1280393842920590}
   grabableRange: 3
+  resetTime: 3
 --- !u!114 &114534424995826738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1196,6 +1199,19 @@ MonoBehaviour:
   - {x: 1.65, y: 0.01, z: -1.275}
   - {x: -1.65, y: 0.01, z: -1.275}
   - {x: -1.65, y: 0.01, z: 1.275}
+--- !u!114 &114856309144559536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1973309281628796}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc4bdf2780faf34bbc5a1a70ed7a9e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  respawnTime: 5
 --- !u!114 &114874837892430882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1217,3 +1233,16 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1192554816007110}
   m_Enabled: 1
+--- !u!136 &136070506952683280
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1705311446668188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.02
+  m_Height: 0.1
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
