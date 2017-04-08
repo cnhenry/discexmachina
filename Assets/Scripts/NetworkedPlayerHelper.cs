@@ -80,10 +80,4 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
         if ( newGameObject == null ) return;
         tf.gameObject.SetActive(true);
     }
-
-    /// <summary>
-    /// For testing only! - simulate orientation of non-vr player
-    /// </summary>
-    void Update() {
-    }
 }

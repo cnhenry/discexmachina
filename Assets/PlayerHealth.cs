@@ -20,12 +20,12 @@ public class PlayerHealth : NetworkBehaviour {
     [Client]
     private void Start() {
         CmdSetHealthToMax();
-        spawnLocation = this.transform.position;
+        spawnLocation = this.transform.position; //On startup remember where the player spawned.
     }
 
     [Server]
     public void TakeDamage(float amount) {
-        //Notify client of damage
+        // Notify client of damage
         RpcDamageNotify(amount);
 
         // Actually take damage
@@ -47,6 +47,8 @@ public class PlayerHealth : NetworkBehaviour {
     void RpcDamageNotify(float amount) {
         if (isLocalPlayer) {
             Debug.Log("You have taken " + amount + " of damage. Health remaining = " + currentHealth);
+
+            //TODO: On client side, play sound of indication of being hit
         }
     }
 
@@ -55,7 +57,7 @@ public class PlayerHealth : NetworkBehaviour {
         if (isLocalPlayer) {
             Debug.Log("You are respawning...");
             CmdSetHealthToMax();
-            transform.position = spawnLocation; // move back to zero location
+            transform.position = spawnLocation; //Move back to location where they spawned
         }
     }
 
@@ -73,6 +75,9 @@ public class PlayerHealth : NetworkBehaviour {
     void RpcDie() {
         if (isLocalPlayer) {
             Debug.Log("You have died");
+
+            //TODO: Play sounds here on death
+
             transform.position = graveyard;
         }
         Invoke("RpcRespawn", respawnTime);

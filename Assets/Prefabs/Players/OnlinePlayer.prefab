@@ -916,7 +916,7 @@ MonoBehaviour:
   sampleDist: 1
   edgesOnly: 0
   edgesOnlyBgColor: {r: 0, g: 0, b: 0, a: 1}
-  edgesColor: {r: 0.47794116, g: 0.47794116, b: 1, a: 1}
+  edgesColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   edgeDetectShader: {fileID: 4800000, guid: 7c3afc50bb21631499a6b0fbbcec07e4, type: 3}
   edgeDetectMaterial: {fileID: 0}
 --- !u!114 &114239007720016392
@@ -1019,8 +1019,8 @@ MonoBehaviour:
   rightController: {fileID: 1738553173441924}
   leftControllerAttachPoint: {fileID: 1972164479326880}
   rightControllerAttachPoint: {fileID: 1280393842920590}
-  grabableRange: 3
-  resetTime: 3
+  discDestroyTime: 3
+  discRespawnTime: 0.5
 --- !u!114 &114534424995826738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1210,7 +1210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc4bdf2780faf34bbc5a1a70ed7a9e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
+  currentHealth: 100
   respawnTime: 5
 --- !u!114 &114874837892430882
 MonoBehaviour:

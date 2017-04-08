@@ -7,13 +7,15 @@ using Valve.VR;
 
 public class DiscSpawner : NetworkBehaviour {
 
+    [SyncVar]
+    private int playerNumber = 0;
+
     public GameObject discToSpawn;
     public GameObject leftController, rightController;
     public GameObject leftControllerAttachPoint, rightControllerAttachPoint;
-    public float grabableRange;
-    public float resetTime;
+    public float discDestroyTime, discRespawnTime;
 
-    private float elapsedTime;
+    private float lastThrownDiscTime;
     private bool controllersGood = false;
 
     private SteamVR_TrackedObject leftTrackedObj;
@@ -38,24 +40,19 @@ public class DiscSpawner : NetworkBehaviour {
         }
     }
 
+    private void OnConnectedToServer() {
+        playerNumber++; //Increment player number to indicate color;
+    }
+
     // Update is called once per frame
     void Update() {
         if ( !isLocalPlayer || !controllersGood ) { return; }
 
-        if ( Steam_LeftController.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad) ) {
-            //Debug.Log("Left Spawning");
-            //Cmd_Spawn(leftController.transform.position, leftController.transform.rotation);
-        }
-
-        if ( Steam_RightController.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad) ) {
-            //Debug.Log("Right Spawning");
-            //Cmd_Spawn(rightController.transform.position, rightController.transform.rotation);
-        }
-
         if ( Steam_LeftController.GetPressDown(SteamVR_Controller.ButtonMask.Trigger) ) {
             //Debug.Log("Left Grabbing");
-            Cmd_Spawn(leftController.transform.position, leftController.transform.rotation);
-            Cmd_Grab(true);
+            if ( Time.time - lastThrownDiscTime >= discRespawnTime ) {
+                Cmd_Spawn(true, leftController.transform.position, leftController.transform.rotation);
+            }
         }
 
         if ( Steam_LeftController.GetPressUp(SteamVR_Controller.ButtonMask.Trigger) ) {
@@ -65,8 +62,9 @@ public class DiscSpawner : NetworkBehaviour {
 
         if ( Steam_RightController.GetPressDown(SteamVR_Controller.ButtonMask.Trigger) ) {
             //Debug.Log("Right Grabbing");
-            Cmd_Spawn(rightController.transform.position, rightController.transform.rotation);
-            Cmd_Grab(false);
+            if(Time.time - lastThrownDiscTime >= discRespawnTime) {
+                Cmd_Spawn(false, rightController.transform.position, rightController.transform.rotation);
+            }
         }
 
         if ( Steam_RightController.GetPressUp(SteamVR_Controller.ButtonMask.Trigger) ) {
@@ -78,7 +76,7 @@ public class DiscSpawner : NetworkBehaviour {
     // https://docs.unity3d.com/Manual/UNetSpawning.html
     // http://answers.unity3d.com/questions/987951/unet-networkserverspawn-not-working.html
     [Command]
-    private void Cmd_Spawn(Vector3 handPosition, Quaternion handRotation) {
+    private void Cmd_Spawn(bool isLeft, Vector3 handPosition, Quaternion handRotation) {
         GameObject netDisc = Instantiate(discToSpawn, handPosition, handRotation);
         // https://forum.unity3d.com/threads/solved-clients-list-of-game-object-prefabs-not-shown-in-the-server-how-do-i-solve-this.352420/
 
@@ -86,19 +84,32 @@ public class DiscSpawner : NetworkBehaviour {
         DiscDamageScript dmgScript = netDisc.GetComponent<DiscDamageScript>();
         dmgScript.thrower = gameObject.GetComponent<NetworkIdentity>().netId;
 
+        //Change color of throwing disc according to player number
+        Material discMat = netDisc.transform.GetChild(0).GetComponent<Renderer>().material;
+        switch (playerNumber) {
+            case 0:
+                discMat.color = Color.cyan;
+            break;
+            case 1:
+                discMat.color = Color.red;
+            break;
+        }
+        
         NetworkServer.Spawn(netDisc);
-        Destroy(netDisc, resetTime);
+        Destroy(netDisc, discDestroyTime);
+
+        Rpc_ClientGrab(isLeft, netDisc.GetComponent<NetworkIdentity>().netId);
     }
 
     [Command]
-    private void Cmd_Grab(bool isLeftController) {
-        Debug.Log("Telling client to grab");
-        Rpc_ClientGrab(isLeftController);
+    private void Cmd_Grab(bool isLeftController, NetworkInstanceId discID) {
+        //Debug.Log("Telling client to grab");
+        Rpc_ClientGrab(isLeftController, discID);
     }
 
     [ClientRpc]
-    private void Rpc_ClientGrab(bool isLeftController) {
-        Debug.Log("Server told me to grab");
+    private void Rpc_ClientGrab(bool isLeftController, NetworkInstanceId discID) {
+        //Debug.Log("Server told me to grab");
         //Set controller based on which called
         GameObject attachPoint;
         if ( isLeftController ) {
@@ -110,34 +121,29 @@ public class DiscSpawner : NetworkBehaviour {
         //Get list of interactables in the environment
         InteractablePhysicalObject[] interactables = GameObject.FindObjectsOfType(typeof(InteractablePhysicalObject)) as InteractablePhysicalObject[];
 
-        //Calculate Closest
-        InteractablePhysicalObject closestInteractable = null;
-        float dist = Mathf.Infinity;
-        Vector3 pos = transform.position;
+        //Search for given netID
+        InteractablePhysicalObject spawnedInteractable = null;
         foreach ( InteractablePhysicalObject ipo in interactables ) {
-            Vector3 diff = ipo.transform.position - pos;
-            float curDistance = diff.sqrMagnitude;
-            if ( curDistance < dist && curDistance < grabableRange ) {
-                closestInteractable = ipo;
-                dist = curDistance;
+            if ( ipo.GetComponent<NetworkIdentity>().netId == discID ) {
+                spawnedInteractable = ipo;
+                break;
             }
         }
 
-        //Grab the closest interactable
-        if ( closestInteractable != null ) {
-            Debug.Log("Found close InteractablePhysicalObjects");
+        if ( spawnedInteractable != null ) {
+            Debug.Log("Found spawned Interactable");
             // Flag interactable as active.
-            closestInteractable.beingInteracted = true;
+            spawnedInteractable.beingInteracted = true;
 
             // Set the position of the interactable and joint to rigidbody attachpoint on controllers
-            closestInteractable.gameObject.transform.position = attachPoint.transform.position + closestInteractable.grabOffsetPosition;
-            closestInteractable.gameObject.transform.rotation = attachPoint.transform.rotation * Quaternion.Euler(closestInteractable.grabOffsetRotation);
+            spawnedInteractable.gameObject.transform.position = attachPoint.transform.position + spawnedInteractable.grabOffsetPosition;
+            spawnedInteractable.gameObject.transform.rotation = attachPoint.transform.rotation * Quaternion.Euler(spawnedInteractable.grabOffsetRotation);
 
             //Add a joint onto the attachpoint
             FixedJoint joint = attachPoint.AddComponent<FixedJoint>();
 
             //Connect it to the interactable's rigidbody
-            joint.connectedBody = closestInteractable.gameObject.GetComponent<Rigidbody>();
+            joint.connectedBody = spawnedInteractable.gameObject.GetComponent<Rigidbody>();
         }
     }
 
@@ -188,6 +194,8 @@ public class DiscSpawner : NetworkBehaviour {
 
             rb.velocity = velocity * velocityMultiplier;
             rb.angularVelocity = angularVelocity * angularVelocityMultiplier;
+
+            lastThrownDiscTime = Time.time;
         }
     }
 }

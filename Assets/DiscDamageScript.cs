@@ -11,6 +11,10 @@ public class DiscDamageScript : NetworkBehaviour {
         if ( !isServer ) {
             return;
         }
+
+        //TODO: Modify this method to play a sound when a collision is detected. Play it on client side to not stream sound data.
+        RpcPlayCollision();
+
         if (collision.collider.tag != "Player") {
             return;
         }
@@ -21,6 +25,7 @@ public class DiscDamageScript : NetworkBehaviour {
         if ( player.GetComponent<NetworkIdentity>().netId == thrower ) {
             return; //Found myself. I'm not allowed to hit myself...
         }
+
         //Found a player
         if ( player.GetComponent<PlayerHealth>() != null ) { //This is a valid player to damage
             PlayerHealth damagedPlayer = player.GetComponent<PlayerHealth>();
@@ -29,5 +34,11 @@ public class DiscDamageScript : NetworkBehaviour {
             //Destroy the disc on player collision to prevent calls multiple times to this
             Destroy(gameObject);
         }
+    }
+
+    //Example Template on how to play sounds when collision detected...
+    [ClientRpc]
+    private void RpcPlayCollision() {
+
     }
 }
