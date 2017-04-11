@@ -75,6 +75,7 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
             newGameObject = Instantiate(Hmd);
             newGameObject.transform.position = tf.FindChild("Camera (eye)").position;
             newGameObject.transform.parent = tf.FindChild("Camera (eye)");
+            newGameObject.SetActive(true);
         }
 
         if ( newGameObject == null ) return;

@@ -3,6 +3,7 @@
 
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 using Valve.VR;
 
 public class DiscSpawner : NetworkBehaviour {
@@ -22,7 +23,19 @@ public class DiscSpawner : NetworkBehaviour {
     private SteamVR_TrackedObject rightTrackedObj;
     private SteamVR_Controller.Device Steam_LeftController;
     private SteamVR_Controller.Device Steam_RightController;
-    
+
+    private bool coolingDownLeft;
+    private bool coolingDownRight;
+    private Text cooldownTextLeft;
+    private Text cooldownTextRight;
+    private double leftTimer;
+    private double rightTimer;
+    private Image cooldownUILeft;
+    private Image cooldownUIRight;
+
+    public AudioClip discSpawnCompleteSound;
+    private AudioSource source;
+
     void Start() {
         if ( !isLocalPlayer ) {
             return;
@@ -30,6 +43,8 @@ public class DiscSpawner : NetworkBehaviour {
         //Grab the steam controller objects and obtain the SteamVR_Controller to detect trigger presses
         leftTrackedObj = leftController.GetComponentInChildren<SteamVR_TrackedObject>();
         rightTrackedObj = rightController.GetComponentInChildren<SteamVR_TrackedObject>();
+
+        source = GetComponent<AudioSource>();
 
         Debug.Log("Left=" + (int)leftTrackedObj.index + " Right=" + (int)rightTrackedObj.index);
         if ( (int)leftTrackedObj.index >= 0 && (int)rightTrackedObj.index >= 0 ) {
@@ -44,9 +59,27 @@ public class DiscSpawner : NetworkBehaviour {
         playerNumber++; //Increment player number to indicate color;
     }
 
+    void PlaySound(AudioSource source, AudioClip clip, float volume)
+    {
+        if (source.clip != clip)
+        {
+            source.Stop();
+        }
+        source.clip = clip;
+        source.loop = false;
+        source.mute = false;
+        source.PlayOneShot(clip, volume);
+    }
+
     // Update is called once per frame
     void Update() {
         if ( !isLocalPlayer || !controllersGood ) { return; }
+
+        cooldownTextLeft = leftController.GetComponentInChildren<Canvas>().GetComponentInChildren<Text>();
+        cooldownTextRight = rightController.GetComponentInChildren<Canvas>().GetComponentInChildren<Text>();
+
+        cooldownUILeft = leftController.GetComponentInChildren<Canvas>().GetComponentInChildren<Image>();
+        cooldownUIRight = rightController.GetComponentInChildren<Canvas>().GetComponentInChildren<Image>();
 
         if ( Steam_LeftController.GetPressDown(SteamVR_Controller.ButtonMask.Trigger) ) {
             //Debug.Log("Left Grabbing");
@@ -58,6 +91,9 @@ public class DiscSpawner : NetworkBehaviour {
         if ( Steam_LeftController.GetPressUp(SteamVR_Controller.ButtonMask.Trigger) ) {
             //Debug.Log("Left Released");
             Cmd_Release(true, Steam_LeftController.velocity, Steam_LeftController.angularVelocity);
+
+            // RELEASED, Show UI Cooldown
+            coolingDownLeft = true;
         }
 
         if ( Steam_RightController.GetPressDown(SteamVR_Controller.ButtonMask.Trigger) ) {
@@ -70,6 +106,38 @@ public class DiscSpawner : NetworkBehaviour {
         if ( Steam_RightController.GetPressUp(SteamVR_Controller.ButtonMask.Trigger) ) {
             //Debug.Log("Right Released");
             Cmd_Release(false, Steam_RightController.velocity, Steam_RightController.angularVelocity);
+            coolingDownRight = true;
+        }
+
+
+
+        if (coolingDownLeft) {
+            cooldownUILeft.fillAmount += 1.0f / discRespawnTime * Time.deltaTime;
+
+            cooldownTextLeft.text = System.Math.Round((leftTimer += 100.0f / discRespawnTime * Time.deltaTime),2).ToString() + "%";
+
+            if (cooldownUILeft.fillAmount == 1) {
+                PlaySound(source, discSpawnCompleteSound, 0.8f);
+                cooldownUILeft.fillAmount = 0;
+                cooldownTextLeft.text = "";
+                leftTimer = 0;
+                coolingDownLeft = false;
+            }
+        }
+
+        if (coolingDownRight) {
+            cooldownUIRight.fillAmount += 1.0f / discRespawnTime * Time.deltaTime;
+
+            cooldownTextRight.text = System.Math.Round((rightTimer += 100.0f / discRespawnTime * Time.deltaTime),2).ToString() + "%";
+
+            if (cooldownUIRight.fillAmount == 1)
+            {
+                PlaySound(source, discSpawnCompleteSound, 0.8f);
+                cooldownUIRight.fillAmount = 0;
+                cooldownTextRight.text = "";
+                rightTimer = 0;
+                coolingDownRight = false;
+            }
         }
     }
 
@@ -82,7 +150,7 @@ public class DiscSpawner : NetworkBehaviour {
 
         //Notify the disc who was the thrower
         DiscDamageScript dmgScript = netDisc.GetComponent<DiscDamageScript>();
-        dmgScript.thrower = gameObject.GetComponent<NetworkIdentity>().netId;
+        dmgScript.SetThrower(gameObject.GetComponent<NetworkIdentity>().netId);
 
         //Change color of throwing disc according to player number
         Material discMat = netDisc.transform.GetChild(0).GetComponent<Renderer>().material;
@@ -196,6 +264,7 @@ public class DiscSpawner : NetworkBehaviour {
             rb.angularVelocity = angularVelocity * angularVelocityMultiplier;
 
             lastThrownDiscTime = Time.time;
+
         }
     }
 }
