@@ -23,7 +23,7 @@ public class DiscDamageScript : NetworkBehaviour {
         //TODO: Modify this method to play a sound when a collision is detected. Play it on client side to not stream sound data.
         RpcPlayCollision();
 
-        if (collision.collider.tag != "Player") {
+        if ( collision.collider.tag != "Player" ) {
             return;
         }
 
@@ -37,7 +37,7 @@ public class DiscDamageScript : NetworkBehaviour {
         //Found a player
         if ( playerHit.GetComponent<PlayerHealth>() != null ) { //This is a valid player to damage
             PlayerHealth damagedPlayer = playerHit.GetComponent<PlayerHealth>();
-            damagedPlayer.TakeDamage(damageAmount, thrower); // Do damage of the disc
+            damagedPlayer.TakeDamage(damageAmount, thrower, damagedPlayer.GetComponent<NetworkIdentity>().netId); // Do damage of the disc
 
             //Destroy the disc on player collision to prevent calls multiple times to this
             Destroy(gameObject);
@@ -46,7 +46,7 @@ public class DiscDamageScript : NetworkBehaviour {
 
     void PlaySound(AudioSource source, AudioClip clip, float volume)
     {
-        if (source.clip != clip)
+        if ( source.clip != clip )
         {
             source.Stop();
         }

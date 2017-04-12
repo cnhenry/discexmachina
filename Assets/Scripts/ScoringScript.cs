@@ -5,16 +5,26 @@ public class ScoringScript : NetworkBehaviour {
     
     public float lengthOfRoundTime; //Time of the round in seconds
 
-    private float timeRunning, timeEnd, timeRemaining;
+    [SyncVar]
+    private float timeRemaining = 1;
+    private float timeRunning, timeEnd;
     private static int numPlayers = 2;
     private int currentPlayers = 0;
-    private int[] playerKills = new int[numPlayers];
-    private NetworkInstanceId[] myPlayers = new NetworkInstanceId[numPlayers];
-    private float[] playerHealth = new float[numPlayers];
+
+    private int[] playerKills;
+    private NetworkInstanceId[] myPlayers;
+    private float[] playerHealth;
+
+    ScoreboardDisplay sd;
 
     // Use this for initialization
     void Start () {
-        if (isServer) {
+        sd = GameObject.FindObjectOfType<ScoreboardDisplay>();
+        if ( isServer ) {
+            currentPlayers = 0;
+            playerKills = new int[numPlayers];
+            myPlayers = new NetworkInstanceId[numPlayers];
+            playerHealth = new float[numPlayers];
             timeRunning = Time.time;
             timeEnd = Time.time + lengthOfRoundTime;
         }   
@@ -23,12 +33,21 @@ public class ScoringScript : NetworkBehaviour {
 	// Update is called once per frame
 	void Update () {
         if ( isServer ) {
-            timeRunning = timeRunning + Time.deltaTime;
-            timeRemaining = timeEnd - timeRunning;
+            if ( timeRemaining > 0 ) {
+                timeRunning = timeRunning + Time.deltaTime;
+                timeRemaining = timeEnd - timeRunning;
+            }
         }
+        sd.UpdateScoreboardTime(timeRemaining);
     }
 
+    [Server]
     public void AddPlayer(NetworkInstanceId playerId) {
+        for (int i = 0 ; i < myPlayers.Length ; i++ ) {
+            if (myPlayers[i] == playerId) {
+                return;
+            }
+        }
         myPlayers[currentPlayers] = playerId;
         currentPlayers++;
     }
@@ -40,9 +59,15 @@ public class ScoringScript : NetworkBehaviour {
         for ( int i = 0 ; i < myPlayers.Length ; i++ ) {
             if ( myPlayers[i] == playerId ) {
                 playerHealth[i] = healthRemaining;
+                Rpc_UpdateHealth(i, healthRemaining);
                 return;
             }
         }
+    }
+
+    [ClientRpc]
+    public void Rpc_UpdateHealth(int playerIndex, float health) {
+        sd.Rpc_UpdatePlayerHealth(playerIndex, health);
     }
 
     [Server]
@@ -50,24 +75,14 @@ public class ScoringScript : NetworkBehaviour {
         for (int i = 0 ; i < myPlayers.Length ; i++) { 
             if (myPlayers[i] == playerId ) {
                 playerKills[i]++;
+                Rpc_AddKill(i, playerKills[i]);
                 return;
             }
         }
     }
 
-    [Server]
-    public float[] GetPlayerHealth() {
-        return playerHealth;
-    }
-
-    [Server]
-    public int[] GetPlayerKills() {
-        return playerKills;
-    }
-    //Time remaining function to call per update
-    [Server]
-    public float TimeRemaining() {
-        //Some how calculate how much time there is left in a round
-        return timeRemaining; //TODO
+    [ClientRpc]
+    public void Rpc_AddKill(int i, int newScore) {
+        sd.Rpc_UpdatePlayerScores(i, playerKills[i]);
     }
 }

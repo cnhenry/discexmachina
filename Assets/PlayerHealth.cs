@@ -18,6 +18,8 @@ public class PlayerHealth : NetworkBehaviour {
 
     private AudioSource source;
 
+    private NetworkInstanceId myNetID;
+
     void PlaySound(AudioSource source, AudioClip clip) {
         if (source.clip != clip)
         {
@@ -37,27 +39,28 @@ public class PlayerHealth : NetworkBehaviour {
 
     [Client]
     private void Start() {
-        ResetPlayer(gameObject.GetComponent<NetworkIdentity>().netId);
+        myNetID = gameObject.GetComponent<NetworkIdentity>().netId;
+        CmdResetPlayer(myNetID);
         spawnLocation = this.transform.position; //On startup remember where the player spawned.
         source = GetComponent<AudioSource>();
     }
 
     [Server]
-    public void TakeDamage(float amount, NetworkInstanceId playerWhoDidDamageToMe) {
+    public void TakeDamage(float amount, NetworkInstanceId playerWhoDidDamageToMe, NetworkInstanceId recieverOfDamage) {
         // Notify client of damage
         RpcDamageNotify(amount);
 
         // Actually take damage
         currentHealth -= amount;
 
+        //Find where the scoring script, kill point!
+        ScoringScript myScoringEngine = GameObject.FindObjectOfType<ScoringScript>();
+        myScoringEngine.UpdateHealthOnPlayer(recieverOfDamage, currentHealth);
+
         RpcLogForServer(currentHealth);
         if ( currentHealth <= 0 ) {
             currentHealth = 0;
-
             RpcDie();
-
-            //Find where the scoring script. Increment who killed him
-            ScoringScript myScoringEngine = GameObject.FindObjectOfType<ScoringScript>();
             myScoringEngine.AddKill(playerWhoDidDamageToMe);
         }
     }
@@ -72,7 +75,10 @@ public class PlayerHealth : NetworkBehaviour {
         if (isLocalPlayer) {
             Debug.Log("You have taken " + amount + " of damage. Health remaining = " + currentHealth);
 
-            //TODO: On client side, play sound of indication of being hit
+            //Find scoring engine, update player on health when damage is done
+            //ScoringScript myScoringEngine = GameObject.FindObjectOfType<ScoringScript>();
+            //myScoringEngine.UpdateHealthOnPlayer(myNetID, currentHealth);
+
             PlaySound(source, damageSound);
         }
     }
@@ -81,8 +87,12 @@ public class PlayerHealth : NetworkBehaviour {
     void RpcRespawn() {
         if (isLocalPlayer) {
             Debug.Log("You are respawning...");
-            ResetPlayer(gameObject.GetComponent<NetworkIdentity>().netId);
+            CmdResetPlayer(gameObject.GetComponent<NetworkIdentity>().netId);
             transform.position = spawnLocation; //Move back to location where they spawned
+
+            //Find scoring engine, update player to full health
+            //ScoringScript myScoringEngine = GameObject.FindObjectOfType<ScoringScript>();
+            //myScoringEngine.UpdateHealthOnPlayer(myNetID, 100);
 
             PlaySound(source, respawnSound);
         }
@@ -94,12 +104,13 @@ public class PlayerHealth : NetworkBehaviour {
     }
 
     [Command]
-    void ResetPlayer(NetworkInstanceId playerId) {
+    void CmdResetPlayer(NetworkInstanceId playerId) {
         RpcSetHealthToMax();
 
         //Find player in scene and update him in scoring engine
         ScoringScript se = FindObjectOfType<ScoringScript>();
         se.AddPlayer(playerId);
+        se.UpdateHealthOnPlayer(playerId, 100);
     }
 
     [ClientRpc]

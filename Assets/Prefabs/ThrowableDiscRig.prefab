@@ -365,7 +365,7 @@ MonoBehaviour:
   grabOffsetPosition: {x: 0, y: 0, z: 0}
   grabOffsetRotation: {x: 0, y: 0, z: 0}
   throwMultiplier: 2
-  angularThrowMultiplier: 0.2
+  angularThrowMultiplier: 1
 --- !u!135 &135203363979856868
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -974,8 +974,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.020369535, y: 0.038574304, z: 0.06890157}
-  m_Center: {x: 0.00058016257, y: -0.00000017154962, z: -0.0030059577}
+  m_Size: {x: 0.020369535, y: 0.038574304, z: 0.08981147}
+  m_Center: {x: 0.0005800128, y: -0.0000001654029, z: 0.0074488283}
 --- !u!65 &65969538766579624
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -984,7 +984,7 @@ BoxCollider:
   m_GameObject: {fileID: 1115417572320936}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.021449763, y: 0.019054893, z: 0.02692613}
   m_Center: {x: 0.00033174315, y: 4.656613e-10, z: -0.0004662373}
@@ -1199,7 +1199,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 947175fbe15a595479a205cb91100190, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf59afcf132d71f408ea0d33407808aa, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1375,7 +1375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.34117648, g: 0.85490197, b: 0.92941177, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1386,7 +1386,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 10
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 110
     m_Alignment: 4
@@ -1518,7 +1518,7 @@ MonoBehaviour:
   hdr: 0
   sepBlurSpread: 2.5
   quality: 1
-  bloomIntensity: 3
+  bloomIntensity: 2
   bloomThreshold: 0.45
   bloomThresholdColor: {r: 1, g: 1, b: 1, a: 1}
   bloomBlurIterations: 1
@@ -1594,7 +1594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 1192554816007110}
-  headOffset: {x: 0, y: -0.4, z: 0.1}
+  headOffset: {x: 0, y: -0.4, z: 0}
   torsoRotationOffset: {x: -90, y: 90, z: 0}
 --- !u!114 &114882870260321980
 MonoBehaviour:
@@ -1608,7 +1608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1619,7 +1619,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 10
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 109
     m_Alignment: 4

@@ -12,6 +12,7 @@ public class TranslateToPosition : MonoBehaviour {
     public transformType transformType;
     public GameObject[] targets;
     public bool loop = true;
+    public bool lookAt = false;
     public float distanceThreshold = 1.0f;
     private Vector3 initialPosition;
     private bool updateOn = false;
@@ -44,10 +45,14 @@ public class TranslateToPosition : MonoBehaviour {
                     targetIndex = 0;
                     currentPosition = initialPosition;
                     transform.position = currentPosition;
-                    transform.LookAt(targets[targetIndex].transform);
+                    if (lookAt == true) 
+                    {
+                        transform.LookAt(targets[targetIndex].transform);
+                    }
                     targetPosition = targets[targetIndex].transform.position;
                     StartCoroutine(TranslateObject());
-                } else
+                } 
+                else if (targetIndex >= targets.Length)
                 {
                     StopCoroutine(TranslateObject());
                     updateOn = false;
@@ -65,6 +70,10 @@ public class TranslateToPosition : MonoBehaviour {
                     break;
                 case transformType.moveto:
                     transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
+                    if (lookAt == true) 
+                    {
+                        transform.LookAt(targetPosition);
+                    }
                     break;
                 default:
                     Debug.Log("Shouldn't have been here...");

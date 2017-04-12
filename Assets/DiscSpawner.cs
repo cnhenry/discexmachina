@@ -8,15 +8,12 @@ using Valve.VR;
 
 public class DiscSpawner : NetworkBehaviour {
 
-    [SyncVar]
-    private int playerNumber = 0;
-
     public GameObject discToSpawn;
     public GameObject leftController, rightController;
     public GameObject leftControllerAttachPoint, rightControllerAttachPoint;
     public float discDestroyTime, discRespawnTime;
 
-    private float lastThrownDiscTime;
+    private float leftLastThrownDiscTime, rightLastThrownDiscTime;
     private bool controllersGood = false;
 
     private SteamVR_TrackedObject leftTrackedObj;
@@ -40,6 +37,7 @@ public class DiscSpawner : NetworkBehaviour {
         if ( !isLocalPlayer ) {
             return;
         }
+
         //Grab the steam controller objects and obtain the SteamVR_Controller to detect trigger presses
         leftTrackedObj = leftController.GetComponentInChildren<SteamVR_TrackedObject>();
         rightTrackedObj = rightController.GetComponentInChildren<SteamVR_TrackedObject>();
@@ -53,10 +51,6 @@ public class DiscSpawner : NetworkBehaviour {
             Steam_RightController = SteamVR_Controller.Input((int)rightTrackedObj.index);
             controllersGood = true;
         }
-    }
-
-    private void OnConnectedToServer() {
-        playerNumber++; //Increment player number to indicate color;
     }
 
     void PlaySound(AudioSource source, AudioClip clip, float volume)
@@ -83,7 +77,7 @@ public class DiscSpawner : NetworkBehaviour {
 
         if ( Steam_LeftController.GetPressDown(SteamVR_Controller.ButtonMask.Trigger) ) {
             //Debug.Log("Left Grabbing");
-            if ( Time.time - lastThrownDiscTime >= discRespawnTime ) {
+            if ( Time.time - leftLastThrownDiscTime >= discRespawnTime ) {
                 Cmd_Spawn(true, leftController.transform.position, leftController.transform.rotation);
             }
         }
@@ -98,7 +92,7 @@ public class DiscSpawner : NetworkBehaviour {
 
         if ( Steam_RightController.GetPressDown(SteamVR_Controller.ButtonMask.Trigger) ) {
             //Debug.Log("Right Grabbing");
-            if(Time.time - lastThrownDiscTime >= discRespawnTime) {
+            if(Time.time - rightLastThrownDiscTime >= discRespawnTime) {
                 Cmd_Spawn(false, rightController.transform.position, rightController.transform.rotation);
             }
         }
@@ -117,7 +111,7 @@ public class DiscSpawner : NetworkBehaviour {
             cooldownTextLeft.text = System.Math.Round((leftTimer += 100.0f / discRespawnTime * Time.deltaTime),2).ToString() + "%";
 
             if (cooldownUILeft.fillAmount == 1) {
-                PlaySound(source, discSpawnCompleteSound, 0.8f);
+                PlaySound(source, discSpawnCompleteSound, 0.6f);
                 cooldownUILeft.fillAmount = 0;
                 cooldownTextLeft.text = "";
                 leftTimer = 0;
@@ -132,7 +126,7 @@ public class DiscSpawner : NetworkBehaviour {
 
             if (cooldownUIRight.fillAmount == 1)
             {
-                PlaySound(source, discSpawnCompleteSound, 0.8f);
+                PlaySound(source, discSpawnCompleteSound, 0.6f);
                 cooldownUIRight.fillAmount = 0;
                 cooldownTextRight.text = "";
                 rightTimer = 0;
@@ -152,18 +146,10 @@ public class DiscSpawner : NetworkBehaviour {
         DiscDamageScript dmgScript = netDisc.GetComponent<DiscDamageScript>();
         dmgScript.SetThrower(gameObject.GetComponent<NetworkIdentity>().netId);
 
-        //Change color of throwing disc according to player number
-        Material discMat = netDisc.transform.GetChild(0).GetComponent<Renderer>().material;
-        switch (playerNumber) {
-            case 0:
-                discMat.color = Color.cyan;
-            break;
-            case 1:
-                discMat.color = Color.red;
-            break;
-        }
-        
         NetworkServer.Spawn(netDisc);
+
+        //TODO: Change color of throwing disc
+
         Destroy(netDisc, discDestroyTime);
 
         Rpc_ClientGrab(isLeft, netDisc.GetComponent<NetworkIdentity>().netId);
@@ -199,7 +185,7 @@ public class DiscSpawner : NetworkBehaviour {
         }
 
         if ( spawnedInteractable != null ) {
-            Debug.Log("Found spawned Interactable");
+            //Debug.Log("Found spawned Interactable");
             // Flag interactable as active.
             spawnedInteractable.beingInteracted = true;
 
@@ -228,9 +214,15 @@ public class DiscSpawner : NetworkBehaviour {
         if ( isLeftController ) {
             attachPoint = leftControllerAttachPoint;
             device = Steam_LeftController;
+            if ( leftLastThrownDiscTime + discRespawnTime < Time.time ) {
+                leftLastThrownDiscTime = Time.time;
+            }
         } else {
             attachPoint = rightControllerAttachPoint;
             device = Steam_RightController;
+            if ( rightLastThrownDiscTime + discRespawnTime < Time.time ) {
+                rightLastThrownDiscTime = Time.time;
+            }
         }
 
         FixedJoint joint = attachPoint.GetComponent<FixedJoint>();
@@ -262,9 +254,6 @@ public class DiscSpawner : NetworkBehaviour {
 
             rb.velocity = velocity * velocityMultiplier;
             rb.angularVelocity = angularVelocity * angularVelocityMultiplier;
-
-            lastThrownDiscTime = Time.time;
-
         }
     }
 }
