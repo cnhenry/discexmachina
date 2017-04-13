@@ -75,6 +75,12 @@ public class DiscSpawner : NetworkBehaviour {
         cooldownUILeft = leftController.GetComponentInChildren<Canvas>().GetComponentInChildren<Image>();
         cooldownUIRight = rightController.GetComponentInChildren<Canvas>().GetComponentInChildren<Image>();
 
+        //Lol music
+        if ( Steam_LeftController.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad) 
+            || Steam_RightController.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad) ) {
+            GameObject.FindObjectOfType<MusicPlayer>().newSong();
+        }
+
         if ( Steam_LeftController.GetPressDown(SteamVR_Controller.ButtonMask.Trigger) ) {
             //Debug.Log("Left Grabbing");
             if ( Time.time - leftLastThrownDiscTime >= discRespawnTime ) {

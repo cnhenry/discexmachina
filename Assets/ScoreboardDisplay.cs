@@ -4,11 +4,14 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using System;
 
 public class ScoreboardDisplay : NetworkBehaviour {
     public Text[] time;
     public Image[] healthBars;
     public Text[] scores;
+    public Text[] results;
+    public GameObject wall;
 
     // Use this for initialization
     void Start() {
@@ -34,7 +37,7 @@ public class ScoreboardDisplay : NetworkBehaviour {
 
     public void UpdateScoreboardTime(float timeInSeconds) {
         foreach (Text t in time) {
-            t.text = timeInSeconds.ToString();
+            t.text = Math.Round(timeInSeconds, 1).ToString();
         }
     }
 
@@ -51,6 +54,26 @@ public class ScoreboardDisplay : NetworkBehaviour {
             break;
             default:
             break;
+        }
+    }
+
+    public void UpdateEndGame(int playerIndex, bool tie) {
+        wall.SetActive(true);
+        if (tie) {
+            results[0].text = "Tie!";
+            results[1].text = "Tie!";
+        } else {
+            if ( playerIndex == 0 ) {
+                results[0].color = Color.cyan;
+                results[1].color = Color.cyan;
+                results[0].text = "BLUE team wins!";
+                results[1].text = "BLUE team wins!";
+            } else if ( playerIndex == 1 ) {
+                results[0].color = Color.red;
+                results[1].color = Color.red;
+                results[0].text = "RED team wins!";
+                results[1].text = "RED team wins!";
+            }
         }
     }
 }

@@ -318,6 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 33.34
   reflectSound: {fileID: 8300000, guid: 4fb2b98ac09f99a49a7884880cfa13f2, type: 3}
+  particlesToEmit: {fileID: 0}
 --- !u!114 &114405580663033208
 MonoBehaviour:
   m_ObjectHideFlags: 1

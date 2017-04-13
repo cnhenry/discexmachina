@@ -9,22 +9,23 @@ public class PlayerHealth : NetworkBehaviour {
 
     public float respawnTime = 5.0f;
 
-    private Vector3 graveyard = new Vector3(-17, -8, -7);
+    private GameObject[] graveyard;
     private Vector3 spawnLocation;
+
+    private int graveyardcounter;
 
     public AudioClip deathSound;
     public AudioClip damageSound;
-    public AudioClip respawnSound;
+    public AudioClip respawnSound, respawnCounter;
+    public GameObject respawnAnimator;
+
 
     private AudioSource source;
 
     private NetworkInstanceId myNetID;
 
     void PlaySound(AudioSource source, AudioClip clip) {
-        if (source.clip != clip)
-        {
-            source.Stop();
-        }
+        source.Stop();
         source.clip = clip;
         source.loop = false;
         source.mute = false;
@@ -39,6 +40,10 @@ public class PlayerHealth : NetworkBehaviour {
 
     [Client]
     private void Start() {
+        //Find graveyards in scene
+        graveyardcounter = 0;
+        graveyard = GameObject.FindGameObjectsWithTag("Graveyards");
+
         myNetID = gameObject.GetComponent<NetworkIdentity>().netId;
         CmdResetPlayer(myNetID);
         spawnLocation = this.transform.position; //On startup remember where the player spawned.
@@ -87,15 +92,23 @@ public class PlayerHealth : NetworkBehaviour {
     void RpcRespawn() {
         if (isLocalPlayer) {
             Debug.Log("You are respawning...");
+            PlaySound(source, respawnSound);
             CmdResetPlayer(gameObject.GetComponent<NetworkIdentity>().netId);
             transform.position = spawnLocation; //Move back to location where they spawned
 
             //Find scoring engine, update player to full health
             //ScoringScript myScoringEngine = GameObject.FindObjectOfType<ScoringScript>();
             //myScoringEngine.UpdateHealthOnPlayer(myNetID, 100);
-
-            PlaySound(source, respawnSound);
+            respawnAnimator.SetActive(false);
         }
+    }
+
+    [ClientRpc]
+    void RpcAnimationRespawn() {
+        if (!isLocalPlayer) {
+            return;
+        }
+        respawnAnimator.SetActive(true);
     }
 
     [ClientRpc]
@@ -121,8 +134,20 @@ public class PlayerHealth : NetworkBehaviour {
             //TODO: Play sounds here on death
             PlaySound(source, deathSound);
 
-            transform.position = graveyard;
+            transform.position = graveyard[graveyardcounter++].gameObject.transform.position;
+            if(graveyardcounter >= graveyard.Length) {
+                graveyardcounter = 0;
+            }
         }
+
+        // Respawn
+        Invoke("RpcCounterRespawn", respawnTime - 3.0f);
+        Invoke("RpcAnimationRespawn", respawnTime - 2.0f);
         Invoke("RpcRespawn", respawnTime);
+    }
+
+    [Client]
+    void RpcCounterRespawn() {
+        source.PlayOneShot(respawnCounter);
     }
 }

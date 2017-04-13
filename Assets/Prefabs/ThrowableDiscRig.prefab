@@ -349,6 +349,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 33.34
+  hitmarkerImage: {fileID: 1195601931704430, guid: 9526d7caa22b5de4c8cd0c467f21ac51,
+    type: 2}
   reflectSound: {fileID: 8300000, guid: 4fb2b98ac09f99a49a7884880cfa13f2, type: 3}
 --- !u!114 &114971338308670614
 MonoBehaviour:
@@ -364,7 +366,7 @@ MonoBehaviour:
   beingInteracted: 0
   grabOffsetPosition: {x: 0, y: 0, z: 0}
   grabOffsetRotation: {x: 0, y: 0, z: 0}
-  throwMultiplier: 2
+  throwMultiplier: 1.75
   angularThrowMultiplier: 1
 --- !u!135 &135203363979856868
 SphereCollider:

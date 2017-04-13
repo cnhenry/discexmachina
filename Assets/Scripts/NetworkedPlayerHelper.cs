@@ -10,6 +10,11 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
     public GameObject localHmd;
     public GameObject Controller;
 
+    public GameObject torso;
+
+    [SyncVar]
+    int colorCount = 0;
+
     /// <summary>
     /// Called when local player authority has been assigned to a network object
     /// </summary>
@@ -20,8 +25,8 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
         }
         GetComponentInChildren<AudioListener>().enabled = true;
         GetComponentInChildren<EdgeDetectionColor>().enabled = true;
-        Debug.Log("GetComponentInChildren<EdgeDetectionColor>()= " + GetComponentInChildren<EdgeDetectionColor>().ToString());
-        Debug.Log("GetComponentInChildren<EdgeDetectionColor>.enabled? " + GetComponentInChildren<EdgeDetectionColor>().enabled);
+        //Debug.Log("GetComponentInChildren<EdgeDetectionColor>()= " + GetComponentInChildren<EdgeDetectionColor>().ToString());
+        //Debug.Log("GetComponentInChildren<EdgeDetectionColor>.enabled? " + GetComponentInChildren<EdgeDetectionColor>().enabled);
         if ( SteamVR.active ) {
             //Enable steam vr scripts for the local player
             //Enable the disc spawner for the local player
@@ -35,23 +40,37 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
                 shader.enabled = true;
                 Debug.Log("shader= " + shader.ToString());
             }
-            foreach ( NetworkBehaviour currentComponent in allComponents.Where(component => component.ToString().Contains("Spawner") || component.ToString().Contains("Health")) ) {
+            foreach ( NetworkBehaviour currentComponent in allComponents.Where(component => component.ToString().Contains("Spawner") || component.ToString().Contains("Health") || component.ToString().Contains("Manager")) ) {
                 currentComponent.enabled = true;
             }
+
         }
+        CmdGetColor();
     }
 
     /// <summary>
     /// Used to check for non-local player as onstartclient is ambiguous
     /// </summary>
     void Start() {
+        ColorManager cm = GetComponent<ColorManager>();
+        Debug.Log("colorCount=" + colorCount);
         switch ( isLocalPlayer ) {
             case true:
             gameObject.name = gameObject.name.Replace("(Clone)", "") + "_localPlayer";
+            if ( colorCount == 1 ) {
+                cm.CmdSetPlayerColor(Color.cyan);
+            } else {
+                cm.CmdSetPlayerColor(Color.red);
+            }
             break;
 
             case false:
             gameObject.name = gameObject.name.Replace("(Clone)", "") + "_clientPlayer";
+            if ( colorCount == 1 ) {
+                cm.CmdSetPlayerColor(Color.red);
+            } else {
+                cm.CmdSetPlayerColor(Color.cyan);
+            }
 
             //Create HMD and Controller objects
             foreach ( Transform childTransform in transform ) {
@@ -80,5 +99,10 @@ public class NetworkedPlayerHelper : NetworkBehaviour {
 
         if ( newGameObject == null ) return;
         tf.gameObject.SetActive(true);
+    }
+
+    [Command]
+    public void CmdGetColor() {
+        colorCount++;
     }
 }

@@ -15,12 +15,16 @@ public class ScoringScript : NetworkBehaviour {
     private NetworkInstanceId[] myPlayers;
     private float[] playerHealth;
 
+    [SyncVar]
+    private bool gameStart = false;
+
     ScoreboardDisplay sd;
 
     // Use this for initialization
     void Start () {
         sd = GameObject.FindObjectOfType<ScoreboardDisplay>();
         if ( isServer ) {
+            gameStart = false;
             currentPlayers = 0;
             playerKills = new int[numPlayers];
             myPlayers = new NetworkInstanceId[numPlayers];
@@ -32,13 +36,36 @@ public class ScoringScript : NetworkBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if ( isServer ) {
+        if ( isServer && gameStart ) {
             if ( timeRemaining > 0 ) {
                 timeRunning = timeRunning + Time.deltaTime;
                 timeRemaining = timeEnd - timeRunning;
+            } else {
+                timeRemaining = 0;
+                // Game Ending Logic
+                if ( playerKills[0] > playerKills[1] ) {
+                    // Server(Player 0) won
+                    UpdateGameEnding(0, false);
+                } else if ( playerKills[0] < playerKills[1] ){
+                    // Client(Player 1) won
+                    UpdateGameEnding(1, false);
+                } else {
+                    // Tie
+                    UpdateGameEnding(0, true);
+                }
             }
         }
-        sd.UpdateScoreboardTime(timeRemaining);
+        sd.UpdateScoreboardTime( timeRemaining );
+    }
+
+    [Server]
+    public void UpdateGameEnding(int winningPlayerId, bool tie) {
+        Rpc_UpdateGameEnding(winningPlayerId, tie);
+    }
+
+    [ClientRpc]
+    public void Rpc_UpdateGameEnding(int i, bool tie) {
+        sd.UpdateEndGame(i, tie);
     }
 
     [Server]
@@ -50,6 +77,9 @@ public class ScoringScript : NetworkBehaviour {
         }
         myPlayers[currentPlayers] = playerId;
         currentPlayers++;
+        if (currentPlayers >= 2) {
+            gameStart = true;
+        }
     }
 
     //Function to modify health based on who was hit

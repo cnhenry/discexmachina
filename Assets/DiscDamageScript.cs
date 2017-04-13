@@ -6,6 +6,8 @@ public class DiscDamageScript : NetworkBehaviour {
     public NetworkInstanceId thrower;
     public float damageAmount;
 
+    public GameObject hitmarkerImage;
+
     public AudioClip reflectSound;
     private AudioSource source;
 
@@ -37,11 +39,22 @@ public class DiscDamageScript : NetworkBehaviour {
         //Found a player
         if ( playerHit.GetComponent<PlayerHealth>() != null ) { //This is a valid player to damage
             PlayerHealth damagedPlayer = playerHit.GetComponent<PlayerHealth>();
+
+            //Spawn hitmarkers?
+            //GameObject hitmarker = Instantiate(hitmarkerImage, collision.transform.position, Quaternion.identity) as GameObject;
+            //Invoke("hitmarkerDestroy", 2.0f);
+
             damagedPlayer.TakeDamage(damageAmount, thrower, damagedPlayer.GetComponent<NetworkIdentity>().netId); // Do damage of the disc
 
             //Destroy the disc on player collision to prevent calls multiple times to this
-            Destroy(gameObject);
+            NetworkServer.Destroy(gameObject);
         }
+    }
+
+    [Server]
+    private void hitmarkerDestroy(NetworkInstanceId id) {
+        GameObject hitmarker = NetworkServer.FindLocalObject(id);
+        NetworkServer.Destroy(hitmarker);
     }
 
     void PlaySound(AudioSource source, AudioClip clip, float volume)
@@ -61,6 +74,6 @@ public class DiscDamageScript : NetworkBehaviour {
     [ClientRpc]
     private void RpcPlayCollision() {
         source = GetComponent<AudioSource>();
-        PlaySound(source, reflectSound, 0.5f);
+        PlaySound(source, reflectSound, 0.6f);
     }
 }
